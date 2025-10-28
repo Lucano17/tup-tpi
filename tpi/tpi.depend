@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1761581894 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+	"variables.h"
+
+1761577983 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.cpp
+	"variables.h"
+
+1761581729 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.h
+	<string>
+
+1761621152 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.cpp
+	"funciones.h"
+
+1761616525 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
+	<iostream>
+
