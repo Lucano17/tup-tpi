@@ -1,6 +1,5 @@
 #include <iostream>
 #include "funciones.h"
-#include "variables.h"
 
 using namespace std;
 
