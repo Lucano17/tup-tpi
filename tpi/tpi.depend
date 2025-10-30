@@ -15,3 +15,30 @@
 1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
 
+1761828984 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761828978 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761828970 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1761828178 e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761828660 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1761828657 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
