@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-void dibujarBordeX(char bordeX);
+void dibujarBordeX();
 void unJugador();
 void dosJugadores();
 void verPuntacionMax();

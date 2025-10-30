@@ -9,16 +9,16 @@ int main() {
     char bordeX = 'Í';
     int opcion;
    do {
-        dibujarBordeX(bordeX);
+        dibujarBordeX();
         cout << "      MENU JUEGO DE DADOS        " << endl;
-        dibujarBordeX(bordeX);
+        dibujarBordeX();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
         cout << "3. Ver la puntuaci¢n mas alta" << endl;
         cout << "4. Ver cr‚ditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
-        dibujarBordeX(bordeX);
+        dibujarBordeX();
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         cout << endl;
