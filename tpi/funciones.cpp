@@ -17,17 +17,19 @@ int fullPuntaje = 30;
 int pokerPuntaje = 40;
 int generalaPuntaje = 50;
 int puntosCalculados = 0;
+int puntosMaxCalculados = 0;
 bool generalaServida = false;
 int valorCantMax = 0;
-int dadoMax = 0;
+int listaDadosMax[5];
+int dadoMaxActual = 0;
 
-/// Juego
+/// Partida
 int cantidadRondas = 5;
 int cantidadTiradasXRonda = 3;
 int cantidadDados = 5;
 int cantidadValores = 6;
 int dados[6] = {1, 2, 3, 4, 5, 6};
-int contadorPorValor[6];
+int contadorDadosPorValor[6];
 int dadosLanzados[5];
 //
 
@@ -174,6 +176,7 @@ void tiradaDeDados(){
 
 }
 
+/// Puntaje
 void calcularPuntos(int dadosLanzados[]){
     int cantidadUno = 0;
     int cantidadDos = 0;
@@ -201,29 +204,28 @@ void calcularPuntos(int dadosLanzados[]){
             cantidadSeis++;
         }
     }
-        contadorPorValor[0] = cantidadUno;
-        contadorPorValor[1] = cantidadDos;
-        contadorPorValor[2] = cantidadTres;
-        contadorPorValor[3] = cantidadCuatro;
-        contadorPorValor[4] = cantidadCinco;
-        contadorPorValor[5] = cantidadSeis;
+        contadorDadosPorValor[0] = cantidadUno;
+        contadorDadosPorValor[1] = cantidadDos;
+        contadorDadosPorValor[2] = cantidadTres;
+        contadorDadosPorValor[3] = cantidadCuatro;
+        contadorDadosPorValor[4] = cantidadCinco;
+        contadorDadosPorValor[5] = cantidadSeis;
 
         int valorCantMax = 0;
-        int dadoMax = 0;
+        int dadoMaxActual = 0;
 
         for(int i = 0; i <= cantidadDados; i++){
-            cout << "Dados " << i + 1 << ": " << contadorPorValor[i] << endl;
+            cout << "Dados " << i + 1 << ": " << contadorDadosPorValor[i] << endl;
         }
 
-        for (int i = 0; i < cantidadValores; i++){
-            if (contadorPorValor[i] > valorCantMax){
-                valorCantMax = contadorPorValor[i];
-                dadoMax = dados[i];
+        for(int i = 0; i < cantidadValores; i++){
+            if (contadorDadosPorValor[i] >= valorCantMax && dados[i] > dadoMaxActual){
+                valorCantMax = contadorDadosPorValor[i];
+                dadoMaxActual = dados[i];
             }
         }
-        cout << "Mayor cantidad de igualdades: Dado " << dadoMax
-        << " con " << valorCantMax << endl;
-        switch(dadoMax){
+
+        switch(dadoMaxActual){
             case 1: puntosCalculados = valorCantMax * 1;
                     break;
             case 2: puntosCalculados = valorCantMax * 2;
@@ -239,5 +241,17 @@ void calcularPuntos(int dadosLanzados[]){
             default: cout << "Valor desconocido";
                     break;
         }
+        for(int i = 0; i < cantidadValores; i++){
+            if (dados[i] > puntosCalculados){
+                puntosCalculados = dados[i];
+                dadoMaxActual = dados[i];
+                valorCantMax = 1;
+            }
+        }
+
+
+        cout << "Mejor combinaci¢n: Dado " << dadoMaxActual
+        << " con " << valorCantMax << " igualdad/es"<< endl;
+
         cout << "Puntos obtenidos: " << puntosCalculados << endl;
 }
