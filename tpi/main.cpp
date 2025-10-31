@@ -1,6 +1,5 @@
 #include <iostream>
 #include "funciones.h"
-#include "variables.h"
 
 using namespace std;
 
@@ -10,17 +9,18 @@ int main() {
     char bordeX = 'Í';
     int opcion;
    do {
-        dibujarBordeX(bordeX);
+        dibujarBordeX();
         cout << "      MENU JUEGO DE DADOS        " << endl;
-        dibujarBordeX(bordeX);
+        dibujarBordeX();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
         cout << "3. Ver la puntuaci¢n mas alta" << endl;
         cout << "4. Ver cr‚ditos" << endl;
         cout << "5. Ver las reglas" << endl;
+        cout << "6. Ejecutar funci¢n de prueba" << endl;
         cout << "0. Salir" << endl;
-        dibujarBordeX(bordeX);
-        cout << "Seleccione una opcion: ";
+        dibujarBordeX();
+        cout << "Seleccione una opci¢n: ";
         cin >> opcion;
         cout << endl;
         system("cls");
@@ -44,6 +44,10 @@ int main() {
 
             case 5:
                 reglas();
+                break;
+
+            case 6:
+                pruebas();
                 break;
 
             case 0:

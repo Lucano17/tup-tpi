@@ -1,8 +1,7 @@
 # depslib dependency file v1.0
-1761581894 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\main.cpp
+1761754801 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\main.cpp
 	<iostream>
 	"funciones.h"
-	"variables.h"
 
 1761577983 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.cpp
 	"variables.h"
@@ -10,9 +9,40 @@
 1761581729 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.h
 	<string>
 
-1761621152 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.cpp
+1761755017 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.cpp
 	"funciones.h"
 
-1761616525 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
+1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
+
+1761877293 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761877063 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761829528 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1761828178 e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761829528 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1761829528 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1761911705 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
 
