@@ -15,18 +15,18 @@
 1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
 
-1761877293 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
 	<iostream>
 	"funciones.h"
 
-1761877063 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+1761928189 e:\user\documentos\github\tup-tpi\tpi\funciones.h
 	<iostream>
 
 1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
 	<iostream>
 	"funciones.h"
 
-1761829528 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
 	<iostream>
 	"funciones.h"
 
@@ -34,15 +34,15 @@
 	<iostream>
 	"funciones.h"
 
-1761829528 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
 	<iostream>
 	"funciones.h"
 
-1761829528 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
 	<iostream>
 	"funciones.h"
 
-1761911705 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1761928296 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 	<iostream>
 	"funciones.h"
 
