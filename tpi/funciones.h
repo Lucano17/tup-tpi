@@ -13,5 +13,6 @@ void reglas();
 int lanzarUnDado();
 void tiradaDeDados();
 void calcularPuntos(int dadosLanzados[]);
+void pruebas();
 
 #endif

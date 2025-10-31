@@ -17,9 +17,10 @@ int main() {
         cout << "3. Ver la puntuaci¢n mas alta" << endl;
         cout << "4. Ver cr‚ditos" << endl;
         cout << "5. Ver las reglas" << endl;
+        cout << "6. Ejecutar funci¢n de prueba" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeX();
-        cout << "Seleccione una opcion: ";
+        cout << "Seleccione una opci¢n: ";
         cin >> opcion;
         cout << endl;
         system("cls");
@@ -43,6 +44,10 @@ int main() {
 
             case 5:
                 reglas();
+                break;
+
+            case 6:
+                pruebas();
                 break;
 
             case 0:
