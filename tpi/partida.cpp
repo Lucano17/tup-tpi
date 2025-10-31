@@ -81,6 +81,7 @@ void tiradaDeDados(){
 /// Puntaje
 void calcularPuntos(int dadosLanzados[]){
     //
+    int escalera = 0;
     int escaleraPuntaje = 25;
     int fullPuntaje = 30;
     int pokerPuntaje = 40;
@@ -186,17 +187,10 @@ void calcularPuntos(int dadosLanzados[]){
             puntosCalculados = fullPuntaje;
         }
 
-        if(contadorDadosPorValor[0] == 1 && contadorDadosPorValor[1] == 1&&
-           contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-            contadorDadosPorValor[4] == 1){
-            puntosCalculados = escaleraPuntaje;
-        }
-
-        if(contadorDadosPorValor[5] == 1 && contadorDadosPorValor[1] == 1&&
-           contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-            contadorDadosPorValor[4] == 1){
-            puntosCalculados = escaleraPuntaje;
-        }
+        // Escalera
+        escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
+        if (escalera != 0) puntosCalculados = escalera;
+        //
     }
     //
 
@@ -209,46 +203,67 @@ void calcularPuntos(int dadosLanzados[]){
     void pruebas(){
         int cantidadDados = 5;
         int puntosCalculados = 0;
-        int contadorDadosPorValor[6] = {1, 1, 1, 0, 1, 1};
-        bool tresIgualdades = false;
-        bool dosIgualdades = false;
-        int escaleraPuntaje = 25;
-        int fullPuntaje = 30;
+        int contadorDadosPorValor[6] = {3, 2, 0, 0, 0, 0};
+        int escalera = 0;
+        int full = 0;
         int pokerPuntaje = 40;
         int generalaPuntaje = 50;
         int generalaServidaPuntaje = 250;
 
         for(int i = 0; i < cantidadDados; i++){
+            // Generala
             if(contadorDadosPorValor[i] == 5){
                 puntosCalculados = generalaPuntaje;
             }
+            // Poker
             if(contadorDadosPorValor[i] == 4){
                 puntosCalculados = pokerPuntaje;
             }
-            if(contadorDadosPorValor[i] == 3){
-                tresIgualdades = true;
-            }
-            if(contadorDadosPorValor[i] == 2){
-                dosIgualdades = true;
-            }
-            if(dosIgualdades == true && tresIgualdades == true){
-                puntosCalculados = fullPuntaje;
-            }
+            // Full
+            full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
+            if (full != 0) puntosCalculados = full;
         }
-
-        if(contadorDadosPorValor[0] == 1 && contadorDadosPorValor[1] == 1&&
-           contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-            contadorDadosPorValor[4] == 1){
-            puntosCalculados = escaleraPuntaje;
-        }
-
-        if(contadorDadosPorValor[5] == 1 && contadorDadosPorValor[1] == 1&&
-           contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-            contadorDadosPorValor[4] == 1){
-            puntosCalculados = escaleraPuntaje;
-        }
+        // Escalera
+        escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
+        if (escalera != 0) puntosCalculados = escalera;
+        //
 
     cout << "Puntaje: " << puntosCalculados << endl;
 }
 
+int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[6]){
+    int escaleraPuntaje = 25;
+    if(contadorDadosPorValor[0] == 1 && contadorDadosPorValor[1] == 1&&
+        contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
+        contadorDadosPorValor[4] == 1){
+        puntosCalculados = escaleraPuntaje;
+    }
+
+    if(contadorDadosPorValor[5] == 1 && contadorDadosPorValor[1] == 1&&
+        contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
+        contadorDadosPorValor[4] == 1){
+        puntosCalculados = escaleraPuntaje;
+    }
+    return puntosCalculados;
+}
+
+int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
+    int fullPuntaje = 30;
+    bool tresIgualdades = false;
+    bool dosIgualdades = false;
+
+    for(int i = 0; i < 6; i++){
+        if(contadorDadosPorValor[i] == 3){
+        tresIgualdades = true;
+        }
+        if(contadorDadosPorValor[i] == 2){
+            dosIgualdades = true;
+        }
+
+        if(dosIgualdades == true && tresIgualdades == true){
+            puntosCalculados = fullPuntaje;
+        }
+    }
+    return puntosCalculados;
+}
 

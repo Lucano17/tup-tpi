@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+void pruebas();
 void dibujarBordeX();
 void unJugador();
 void dosJugadores();
@@ -13,6 +14,7 @@ void reglas();
 int lanzarUnDado();
 void tiradaDeDados();
 void calcularPuntos(int dadosLanzados[]);
-void pruebas();
+int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[]);
+int verificarFull(int i, int puntosCalculados, int contadorDadosPorValor[]);
 
 #endif
