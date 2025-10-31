@@ -82,8 +82,7 @@ void tiradaDeDados(){
 void calcularPuntos(int dadosLanzados[]){
     //
     int escalera = 0;
-    int escaleraPuntaje = 25;
-    int fullPuntaje = 30;
+    int full = 0;
     int pokerPuntaje = 40;
     int generalaPuntaje = 50;
     bool tresIgualdades = false;
@@ -180,12 +179,9 @@ void calcularPuntos(int dadosLanzados[]){
         if(contadorDadosPorValor[i] == 3){
             tresIgualdades = true;
         }
-        if(contadorDadosPorValor[i] == 2){
-            dosIgualdades = true;
-        }
-        if(dosIgualdades == true && tresIgualdades == true){
-            puntosCalculados = fullPuntaje;
-        }
+        // Full
+        full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
+        if (full != 0) puntosCalculados = full;
 
         // Escalera
         escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
@@ -254,7 +250,7 @@ int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
 
     for(int i = 0; i < 6; i++){
         if(contadorDadosPorValor[i] == 3){
-        tresIgualdades = true;
+            tresIgualdades = true;
         }
         if(contadorDadosPorValor[i] == 2){
             dosIgualdades = true;
