@@ -16,5 +16,6 @@ void tiradaDeDados();
 void calcularPuntos(int dadosLanzados[]);
 int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[]);
 int verificarFull(int i, int puntosCalculados, int contadorDadosPorValor[]);
+void calcularTirada(int cantidadDados, int dadosLanzados[]);
 
 #endif

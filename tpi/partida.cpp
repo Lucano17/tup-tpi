@@ -38,7 +38,7 @@ void dosJugadores(){
 }
 ///
 
-/// Puntuaci�n m�xima
+/// Puntuación máxima
 void verPuntacionMax(){
     string mejorJugador;
     int mejorPuntaje = 0;
@@ -47,7 +47,7 @@ void verPuntacionMax(){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "A�n no hay puntuaciones registradas." << endl;
+        cout << "Aún no hay puntuaciones registradas." << endl;
     }
     dibujarBordeX();
 }
@@ -61,21 +61,22 @@ int lanzarUnDado(){
     return num;
 }
 void tiradaDeDados(){
-    //
-    int cantidadDados = 5;
-    int cantidadValores = 6;
-    int dados[6] = {1, 2, 3, 4, 5, 6};
+    const int cantidadDados = 5;
     int dadosLanzados[cantidadDados];
-    //
+
+    // Primera tirada
     for(int i = 0; i < cantidadDados; i++){
         dadosLanzados[i] = lanzarUnDado();
     }
+
+    calcularTirada(cantidadDados, dadosLanzados);
+
     for(int i = 0; i < cantidadDados; i++){
         cout << dadosLanzados[i] << " ";
     }
     cout << endl;
-    calcularPuntos(dadosLanzados);
 
+    calcularPuntos(dadosLanzados);
 }
 
 /// Puntaje
@@ -190,7 +191,7 @@ void calcularPuntos(int dadosLanzados[]){
     }
     //
 
-    cout << "Mejor combinaci�n: Dado " << dadoMaxActual
+    cout << "Mejor combinación: Dado " << dadoMaxActual
     << " con " << valorCantMax << " igualdad/es"<< endl;
 
     cout << "Puntos obtenidos: " << puntosCalculados << endl;
@@ -263,3 +264,25 @@ int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
     return puntosCalculados;
 }
 
+void calcularTirada(int cantidadDados, int dadosLanzados[5]){
+    for(int tirada = 1; tirada <= 3; tirada++){
+        cout << "Tirada n°: " << tirada << endl;
+        for(int i = 0; i < cantidadDados; i++){
+            cout << dadosLanzados[i] << " ";
+        }
+        cout << endl;
+
+        if(tirada == 3) break;
+
+        cout << "Ingresa 1 si queres volver a tirar ese dado, 0 para mantenerlo (separados por espacios): ";
+        int eleccion;
+        for(int i = 0; i < cantidadDados; i++){
+            cin >> eleccion;
+            if(eleccion == 1){
+                dadosLanzados[i] = lanzarUnDado();
+            }
+        }
+    }
+
+    cout << "Resultado final: ";
+}
