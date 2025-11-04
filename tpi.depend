@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1761754801 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761577983 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.cpp
+	"variables.h"
+
+1761581729 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.h
+	<string>
+
+1761755017 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.cpp
+	"funciones.h"
+
+1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
+	<iostream>
+
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761928189 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1761828178 e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1761928296 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762105143 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1762116223 c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762116012 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+	"Unjugador.cpp"
+
+1762120888 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762105143 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762105143 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1762115765 source:c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1762116158 c:\users\feder\onedrive\escritorio\ultima carpeta que creo\tup-tpi\tpi\unjugador.cpp
+
+1762105143 source:c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1762116223 c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762116012 source:c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+	"Unjugador.cpp"
+
+1762265637 c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1762120888 source:c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762105143 source:c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762105143 source:c:\users\feder\onedrive\escritorio\fede-branch\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
