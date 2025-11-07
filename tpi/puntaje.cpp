@@ -92,7 +92,6 @@ int calcularPuntos(int dadosLanzados[]){
             valorCantMax = 1;
         }
     }
-
     // Condicionales para calcular escalera, full, poker y generala
     for(int i = 0; i < cantidadDados; i++){
         if(contadorDadosPorValor[i] == 5){
