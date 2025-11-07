@@ -2,98 +2,16 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include "funciones.h"
+
 using namespace std;
 
-
 /// CONSTANTES
-const int CANT_DADOS = 5;
 const int CANT_RONDAS = 10;
-const int MAX_LANZAMIENTOS = 3;
 
 
-/// FUNCION PARA LANZAR DADOS
-void lanzarDados(int dados[], int cantidad) {
-    for (int i = 0; i < cantidad; i++) {
-        dados[i] = rand() % 6 + 1;
-    }
-}
-
-
-/// FUNCION PARA MOSTRAR LOS DADOS EN PANTALLA
-void mostrarDados(int dados[]) {
-    cout << "Dados: ";
-    for (int i = 0; i < CANT_DADOS; i++) {
-        cout << "[" << dados[i] << "] ";
-    }
-    cout << endl;
-}
-
-
-/// FUNCION PARA SUMAR LOS VALORES DE LOS DADOS
-int sumarPuntos(int dados[]) {
-    int total = 0;
-    for (int i = 0; i < CANT_DADOS; i++) {
-        total += dados[i];
-    }
-    return total;
-}
-
-
-/// FUNCION PARA RE-LANZAR LOS DADOS SELECCIONADOS
-void relanzarDados(int dados[]) {
-    int cantidadReelanzar;
-    cout << "�Cuantos dados quieres volver a tirar? (0-5): ";
-    cin >> cantidadReelanzar;
-
-    for (int i = 0; i < cantidadReelanzar; i++) {
-        int indice;
-        cout << "Ingrese el numero del dado a relanzar (1-5): ";
-        cin >> indice;
-        if (indice >= 1 && indice <= 5) {
-            dados[indice - 1] = rand() % 6 + 1; // Re-lanza el dado elegido
-        }
-    }
-}
-
-
-/// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {
-    int dados[CANT_DADOS];
-    int lanzamientos = 1;
-    char opcion;
-
-    // PRIMER LANZAMIENTO
-    lanzarDados(dados, CANT_DADOS);
-    cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
-    mostrarDados(dados);
-    cout << "Puntos actuales: " << sumarPuntos(dados) << endl;
-
-    // HASTA 3 LANZAMIENTOS POR TURNO
-    while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "�Deseas volver a lanzar algun dado? (s/n): ";
-        cin >> opcion;
-
-        if (opcion == 's' || opcion == 'S') {
-            relanzarDados(dados);
-            lanzamientos++;
-
-            cout << "Lanzamiento " << lanzamientos << " de " << nombre << endl;
-            mostrarDados(dados);
-            cout << "Puntos actuales: " << sumarPuntos(dados) << endl;
-        } else {
-            break;
-        }
-    }
-
-    // EL PUNTAJE FINAL DE LA RONDA ES EL �LTIMO RESULTADO
-    int puntosTotales = sumarPuntos(dados);
-    cout << "Puntos obtenidos por " << nombre << " en este turno: " << puntosTotales << endl;
-    return puntosTotales;
-}
-
-/// FUNCION PRINCIPAL DEL PROGRAMA (main)
-int main() {
-    srand(time(0));
+/// MODALIDAD DOS JUGADORES
+int dosJugadores() {
 
     /// INGRESO DE NOMBRES DE LOS JUGADORES
     string jugador1, jugador2;
