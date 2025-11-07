@@ -32,11 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../.gitignore" />
 		<Unit filename="creditos.cpp" />
+		<Unit filename="dosJugadores.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="partida.cpp" />
+		<Unit filename="puntaje.cpp" />
 		<Unit filename="reglas.cpp" />
+		<Unit filename="unJugador.cpp" />
 		<Unit filename="utils.cpp" />
 		<Extensions />
 	</Project>

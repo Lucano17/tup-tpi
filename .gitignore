@@ -44,3 +44,5 @@ Thumbs.db
 # Si querés ignorar todos menos los fuentes:
 # tpi/*.cbp
 # tpi/*.layout
+tpi/tpi.cbp
+tpi/tpi.layout
