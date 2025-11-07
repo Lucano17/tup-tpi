@@ -43,18 +43,22 @@
 	<iostream>
 	"funciones.h"
 
-1762524420 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1762525206 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 	<iostream>
 	"funciones.h"
 
-1762524471 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
+1762525293 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<string>
 	"funciones.h"
 
-1762524320 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
+1762533798 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"funciones.h"
+
+1762525208 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
 	<iostream>
 	"funciones.h"
 

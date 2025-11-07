@@ -92,6 +92,7 @@ int calcularPuntos(int dadosLanzados[]){
             valorCantMax = 1;
         }
     }
+
     // Condicionales para calcular escalera, full, poker y generala
     for(int i = 0; i < cantidadDados; i++){
         if(contadorDadosPorValor[i] == 5){
@@ -102,17 +103,34 @@ int calcularPuntos(int dadosLanzados[]){
         }
         // Full
         full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
-        if (full != 0) puntosCalculados = full;
+        if (full != 0) {
+                puntosCalculados = full;
+        }
 
         // Escalera
         escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
-        if (escalera != 0) puntosCalculados = escalera;
-        //
+        if (escalera != 0) {
+                puntosCalculados = escalera;
+        }
+    }
+    // Si no es una jugada especial, imprime la mejor combinaci¢n obtenida
+    if(puntosCalculados < 25){
+        cout << "Mejor combinaci¢n: Dado " << dadoMaxActual
+        << " con " << valorCantMax << " igualdad/es"<< endl;
+    }
+    if(puntosCalculados == 50){
+        cout << "Mejor combinaci¢n: Generala " << endl;
+    }
+    if(puntosCalculados == 40){
+        cout << "Mejor combinaci¢n: Poker " << endl;
+    }
+    if(puntosCalculados == 30){
+        cout << "Mejor combinaci¢n: Full " << endl;
+    }
+    if(puntosCalculados == 25){
+        cout << "Mejor combinaci¢n: Escalera " << endl;
     }
     //
-
-    cout << "Mejor combinaciÃ³n: Dado " << dadoMaxActual
-    << " con " << valorCantMax << " igualdad/es"<< endl;
 
     cout << "Puntos obtenidos: " << puntosCalculados << endl;
     return puntosCalculados;
