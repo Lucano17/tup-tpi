@@ -15,11 +15,12 @@
 1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
 
-1761921717 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+1762520754 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
 	<iostream>
+	<string>
 	"funciones.h"
 
-1761928189 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+1762524875 e:\user\documentos\github\tup-tpi\tpi\funciones.h
 	<iostream>
 
 1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
@@ -42,7 +43,18 @@
 	<iostream>
 	"funciones.h"
 
-1761928296 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1762524420 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762524471 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	"funciones.h"
+
+1762524320 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
 	<iostream>
 	"funciones.h"
 

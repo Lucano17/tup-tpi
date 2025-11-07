@@ -1,4 +1,6 @@
 #include <iostream>
+
+#include <string>
 #include "funciones.h"
 
 using namespace std;
@@ -44,10 +46,6 @@ int main() {
 
             case 5:
                 reglas();
-                break;
-
-            case 6:
-                pruebas();
                 break;
 
             case 0:
