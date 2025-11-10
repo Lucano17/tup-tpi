@@ -11,18 +11,24 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 /// Puntuación máxima
-void verPuntacionMax(){
-    string mejorJugador;
-    int mejorPuntaje = 0;
+void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
+    if(puntaje > mejorPuntaje){
+        mejorPuntaje = puntaje;
+        mejorJugador = jugador;
+    }
+}
+
+void verPuntacionMax(string mejorJugador, int mejorPuntaje){
     cout << "==== PUNTUACION MAS ALTA ====" << endl;
-    if (mejorPuntaje > 0) {
+    if(mejorPuntaje > 0){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "Aún no hay puntuaciones registradas." << endl;
+        cout << "A�n no hay puntuaciones registradas." << endl;
     }
     dibujarBordeX();
 }
+
 ///
 
 /// Partida
