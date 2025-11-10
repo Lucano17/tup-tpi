@@ -11,7 +11,7 @@ void jugar(){
 }
 ///
 
-/// Un jugador
+/** Un jugador
 void unJugador(){
     string nombre1 = "Lucas";
     cout << "Ingrese el nombre del jugador: ";
@@ -22,7 +22,7 @@ void unJugador(){
     cout << "Primer tirada" << endl;
     tiradaDeDados();
 }
-///
+*/
 
 /// Dos jugadores
 void dosJugadores(){
@@ -69,15 +69,43 @@ void tiradaDeDados(){
         dadosLanzados[i] = lanzarUnDado();
     }
 
-    calcularTirada(cantidadDados, dadosLanzados);
-
+    // Mostrar primera tirada
+    cout << "Primera tirada: ";
     for(int i = 0; i < cantidadDados; i++){
         cout << dadosLanzados[i] << " ";
     }
     cout << endl;
 
+    // ===== Verificar Generala Servida en la primera tirada =====
+    int contadorDadosPorValor[6] = {0,0,0,0,0,0};
+    for(int i = 0; i < cantidadDados; i++){
+        switch(dadosLanzados[i]){
+            case 1: contadorDadosPorValor[0]++; break;
+            case 2: contadorDadosPorValor[1]++; break;
+            case 3: contadorDadosPorValor[2]++; break;
+            case 4: contadorDadosPorValor[3]++; break;
+            case 5: contadorDadosPorValor[4]++; break;
+            case 6: contadorDadosPorValor[5]++; break;
+        }
+    }
+
+    bool generalaServida = false;
+    for(int i = 0; i < 6; i++){
+        if(contadorDadosPorValor[i] == 5){
+            cout << "¡¡Generala Servida!! Puntaje 250" << endl;
+            generalaServida = true;
+        }
+    }
+
+    if(generalaServida){
+        return; // Termina la función si salió generala servida
+    }
+
+    // Si no es generala servida, continuar con las siguientes tiradas
+    calcularTirada(cantidadDados, dadosLanzados);
     calcularPuntos(dadosLanzados);
 }
+
 
 /// Puntaje
 void calcularPuntos(int dadosLanzados[]){
@@ -266,7 +294,7 @@ int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
 
 void calcularTirada(int cantidadDados, int dadosLanzados[5]){
     for(int tirada = 1; tirada <= 3; tirada++){
-        cout << "Tirada n°: " << tirada << endl;
+        cout << "Tirada nro: " << tirada << endl;
         for(int i = 0; i < cantidadDados; i++){
             cout << dadosLanzados[i] << " ";
         }

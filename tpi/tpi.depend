@@ -46,3 +46,32 @@
 	<iostream>
 	"funciones.h"
 
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1762793651 c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1762794098 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762789359 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
