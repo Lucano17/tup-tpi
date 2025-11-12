@@ -50,6 +50,14 @@ void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << endl;
 }
 
+/// NUEVA FUNCION: verificar si es Generala servida
+bool esGenerala(int dados[]) {
+    for (int i = 1; i < CANT_DADOS; i++) {
+        if (dados[i] != dados[0]) return false;
+    }
+    return true;
+}
+
 
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
@@ -67,8 +75,7 @@ void relanzarDados(int dadosLanzados[]) {
 }
 
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {
-    int dadosLanzados[CANT_DADOS];
+int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
     int puntosActuales = 0;
@@ -79,6 +86,15 @@ int turnoJugador(string nombre) {
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
+
+    //  Verificar si es generala servida (solo en el primer lanzamiento)
+    if (esGenerala(dadosLanzados)) {
+        cout << "\n======================================" << endl;
+        cout << "       ¡GENERALA SERVIDA!" << endl;
+        cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
+        cout << "======================================\n" << endl;
+        return 999; // Valor especial para indicar que se terminó el juego
+        }
 
     // HASTA 3 LANZAMIENTOS POR TURNO
     while (lanzamientos < MAX_LANZAMIENTOS) {
