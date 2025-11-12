@@ -7,8 +7,7 @@ using namespace std;
 void pruebas();
 void dibujarBordeX();
 void unJugador();
-int dosJugadores();
-void verPuntacionMax();
+int dosJugadores(string &mejorJugador, int &mejorPuntaje);
 void creditos();
 void reglas();
 int lanzarUnDado();
@@ -19,5 +18,10 @@ int verificarFull(int i, int puntosCalculados, int contadorDadosPorValor[]);
 void calcularTirada(int cantidadDados, int dadosLanzados[]);
 void relanzarDados(int dados[]);
 int turnoJugador(string nombre);
+void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje);
+void verPuntacionMax(string mejorJugador, int mejorPuntaje);
+bool esGenerala(int dados[]);
+
+
 
 #endif

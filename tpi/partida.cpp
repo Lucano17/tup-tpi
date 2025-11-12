@@ -11,18 +11,24 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 /// PuntuaciÃ³n mÃ¡xima
-void verPuntacionMax(){
-    string mejorJugador;
-    int mejorPuntaje = 0;
+void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
+    if(puntaje > mejorPuntaje){
+        mejorPuntaje = puntaje;
+        mejorJugador = jugador;
+    }
+}
+
+void verPuntacionMax(string mejorJugador, int mejorPuntaje){
     cout << "==== PUNTUACION MAS ALTA ====" << endl;
-    if (mejorPuntaje > 0) {
+    if(mejorPuntaje > 0){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "AÃºn no hay puntuaciones registradas." << endl;
+        cout << "Aún no hay puntuaciones registradas." << endl;
     }
     dibujarBordeX();
 }
+
 ///
 
 /// Partida
@@ -44,6 +50,15 @@ void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << endl;
 }
 
+/// NUEVA FUNCION: verificar si es Generala servida
+bool esGenerala(int dados[]) {
+    for (int i = 1; i < CANT_DADOS; i++) {
+        if (dados[i] != dados[0]) return false;
+    }
+    return true;
+}
+
+
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
     cout << "¨Cuantos dados quieres volver a tirar? (0-5): ";
@@ -59,11 +74,8 @@ void relanzarDados(int dadosLanzados[]) {
     }
 }
 
-
-
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {
-    int dadosLanzados[CANT_DADOS];
+int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
     int puntosActuales = 0;
@@ -74,6 +86,15 @@ int turnoJugador(string nombre) {
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
+
+    //  Verificar si es generala servida (solo en el primer lanzamiento)
+    if (esGenerala(dadosLanzados)) {
+        cout << "\n======================================" << endl;
+        cout << "       ¡GENERALA SERVIDA!" << endl;
+        cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
+        cout << "======================================\n" << endl;
+        return 999; // Valor especial para indicar que se terminó el juego
+        }
 
     // HASTA 3 LANZAMIENTOS POR TURNO
     while (lanzamientos < MAX_LANZAMIENTOS) {
