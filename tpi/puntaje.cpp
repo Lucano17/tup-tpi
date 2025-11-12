@@ -26,9 +26,7 @@ int calcularPuntos(int dadosLanzados[]){
     //
     int puntosCalculados = 0;
     int valorCantMax = 0;
-    int listaDadosMax[5];
     int dadoMaxActual = 0;
-    bool generalaServida = false;
     //
     for(int i = 0; i < cantidadDados; i++){
         if (dadosLanzados[i] == 1){

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "funciones.h"  // o el que tenga la declaración de turnoJugador()
+#include "funciones.h"
 using namespace std;
 
 void unJugador() {
@@ -14,7 +14,7 @@ void unJugador() {
     int puntajeTotal = 0;
 
     // Bucle de rondas
-    for (int ronda = 1; ronda <= 5; ronda++) {
+    for (int ronda = 1; ronda <= 10; ronda++) {
         cout << "======================================" << endl;
         cout << "           RONDA " << ronda << " DE 5" << endl;
         cout << "======================================" << endl;
@@ -23,7 +23,7 @@ void unJugador() {
 
         cout << "Turno de " << nombre1 << endl;
 
-        int puntosRonda = turnoJugador(nombre1);  // <-- CAMBIO CLAVE
+        int puntosRonda = turnoJugador(nombre1);
         puntajeTotal += puntosRonda;
 
         cout << "\n==== FIN DEL TURNO DE " << nombre1 << " ====\n";
