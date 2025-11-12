@@ -5,7 +5,8 @@
 using namespace std;
 
 void pruebas();
-void dibujarBordeX();
+void dibujarBordeXGrueso();
+void dibujarBordeXFino();
 void unJugador();
 int dosJugadores(string &mejorJugador, int &mejorPuntaje);
 void creditos();

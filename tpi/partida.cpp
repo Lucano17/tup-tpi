@@ -10,7 +10,7 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 
-/// PuntuaciÃ³n mÃ¡xima
+/// Puntuaci¢n M xima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -24,14 +24,10 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "Aún no hay puntuaciones registradas." << endl;
+        cout << "A£n no hay puntuaciones registradas." << endl;
     }
-    dibujarBordeX();
+    dibujarBordeXGrueso();
 }
-
-///
-
-/// Partida
 
 /// FUNCION PARA LANZAR DADOS
 void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
@@ -90,10 +86,10 @@ int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
     //  Verificar si es generala servida (solo en el primer lanzamiento)
     if (esGenerala(dadosLanzados)) {
         cout << "\n======================================" << endl;
-        cout << "       ¡GENERALA SERVIDA!" << endl;
+        cout << "       GENERALA SERVIDA!" << endl;
         cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
         cout << "======================================\n" << endl;
-        return 999; // Valor especial para indicar que se terminó el juego
+        return 999; // Valor especial para indicar que se termin¢ el juego
         }
 
     // HASTA 3 LANZAMIENTOS POR TURNO
