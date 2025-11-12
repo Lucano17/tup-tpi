@@ -11,7 +11,7 @@ const int CANT_RONDAS = 10;
 
 
 /// MODALIDAD DOS JUGADORES
-int dosJugadores() {
+int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
 
     /// INGRESO DE NOMBRES DE LOS JUGADORES
     string jugador1, jugador2;
@@ -67,13 +67,29 @@ int dosJugadores() {
     cout << jugador2 << ": " << puntaje2 << " puntos" << endl;
 
     ///  MOSTRAR GANADOR O EMPATE
-    if (puntaje1 > puntaje2) {
-        cout << " El ganador es: " << jugador1 << endl;
-    } else if (puntaje2 > puntaje1) {
-        cout << "El ganador es: " << jugador2 << endl;
-    } else {
-        cout << "Empate" << endl;
+   if (puntaje1 > puntaje2) {
+    cout << "El ganador es: " << jugador1 << endl;
     }
+    else if (puntaje2 > puntaje1) {
+    cout << "El ganador es: " << jugador2 << endl;
+    }
+    else {
+    cout << "\n=== EMPATE DE PUNTAJE ===" << endl;
+    cout << "Se decide ganador por LOTERÍA..." << endl;
+
+    // loteria
+    int ganadorSorteado = rand() % 2;
+
+    if (ganadorSorteado == 0) {
+        cout << "Ganador por sorteo: " << jugador1 << endl;
+    } else {
+        cout << "Ganador por sorteo: " << jugador2 << endl;
+    }
+}
+
+    guardarMejorPuntaje(jugador1, puntaje1, mejorJugador, mejorPuntaje);
+    guardarMejorPuntaje(jugador2, puntaje2, mejorJugador, mejorPuntaje);
+
 
     return 0;
 }
