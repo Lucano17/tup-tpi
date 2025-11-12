@@ -1,0 +1,49 @@
+# ===========================
+# ARCHIVOS GENERADOS POR CODE::BLOCKS
+# ===========================
+*.depend
+*.layout
+*.cbp
+*.workspace
+
+# ===========================
+# COMPILACIÓN / BINARIOS
+# ===========================
+*.exe
+*.dll
+*.o
+*.obj
+*.so
+*.a
+*.lib
+
+# ===========================
+# DIRECTORIOS DE COMPILACIÓN
+# ===========================
+bin/
+obj/
+build/
+
+# ===========================
+# BACKUPS Y TEMPORALES
+# ===========================
+*.bak
+*.tmp
+*.swp
+*.log
+
+# ===========================
+# ARCHIVOS DEL SISTEMA
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# ARCHIVOS DE CODE::BLOCKS (proyecto)
+# ===========================
+# Si querés ignorar todos menos los fuentes:
+# tpi/*.cbp
+# tpi/*.layout
+tpi/tpi.cbp
+tpi/tpi.layout
+tpi/tpi.depend

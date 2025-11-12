@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
 #include "funciones.h"
 
 using namespace std;
@@ -6,6 +9,11 @@ using namespace std;
 
 int main() {
     srand(time(0));
+
+    string mejorJugador = "";
+    int mejorPuntaje = 0;
+
+
     char bordeX = 'Í';
     int opcion;
    do {
@@ -30,12 +38,13 @@ int main() {
                 unJugador();
                 break;
 
-            case 2:
-                dosJugadores();
+           case 2:
+                dosJugadores(mejorJugador, mejorPuntaje);
                 break;
 
+
             case 3:
-                verPuntacionMax();
+                verPuntacionMax(mejorJugador, mejorPuntaje);
                 break;
 
             case 4:
@@ -44,10 +53,6 @@ int main() {
 
             case 5:
                 reglas();
-                break;
-
-            case 6:
-                pruebas();
                 break;
 
             case 0:
