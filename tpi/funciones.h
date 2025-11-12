@@ -5,7 +5,8 @@
 using namespace std;
 
 void pruebas();
-void dibujarBordeX();
+void dibujarBordeXGrueso();
+void dibujarBordeXFino();
 void unJugador();
 int dosJugadores(string &mejorJugador, int &mejorPuntaje);
 void creditos();
@@ -20,7 +21,7 @@ void relanzarDados(int dados[]);
 int turnoJugador(string nombre);
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje);
 void verPuntacionMax(string mejorJugador, int mejorPuntaje);
-
+bool esGenerala(int dados[]);
 
 
 

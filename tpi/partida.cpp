@@ -10,7 +10,7 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 
-/// Puntuación máxima
+/// Puntuaci¢n M xima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -24,14 +24,10 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "A�n no hay puntuaciones registradas." << endl;
+        cout << "Aún no hay puntuaciones registradas." << endl;
     }
-    dibujarBordeX();
+    dibujarBordeXGrueso();
 }
-
-///
-
-/// Partida
 
 /// FUNCION PARA LANZAR DADOS
 void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
@@ -40,6 +36,7 @@ void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
     }
 }
 
+///
 
 /// FUNCION PARA MOSTRAR LOS DADOS EN PANTALLA
 void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
@@ -50,10 +47,18 @@ void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << endl;
 }
 
+/// NUEVA FUNCION: verificar si es Generala servida
+bool esGenerala(int dados[]) {
+    for (int i = 1; i < CANT_DADOS; i++) {
+        if (dados[i] != dados[0]) return false;
+    }
+    return true;
+}
+
 
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
-    cout << "�Cuantos dados quieres volver a tirar? (0-5): ";
+    cout << "¨Cuantos dados quieres volver a tirar? (0-5): ";
     cin >> cantidadReelanzar;
 
     for (int i = 0; i < cantidadReelanzar; i++) {
@@ -67,8 +72,7 @@ void relanzarDados(int dadosLanzados[]) {
 }
 
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {
-    int dadosLanzados[CANT_DADOS];
+int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
     int puntosActuales = 0;
@@ -80,9 +84,18 @@ int turnoJugador(string nombre) {
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
 
+    //  Verificar si es generala servida (solo en el primer lanzamiento)
+    if (esGenerala(dadosLanzados)) {
+        cout << "\n======================================" << endl;
+        cout << "       GENERALA SERVIDA!" << endl;
+        cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
+        cout << "======================================\n" << endl;
+        return 999; // Valor especial para indicar que se termin¢ el juego
+        }
+
     // HASTA 3 LANZAMIENTOS POR TURNO
     while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "�Deseas volver a lanzar algun dado? (s/n): ";
+        cout << "¨Deseas volver a lanzar algun dado? (s/n): ";
         cin >> opcion;
 
         if (opcion == 's' || opcion == 'S') {
