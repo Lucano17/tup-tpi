@@ -46,3 +46,4 @@ Thumbs.db
 # tpi/*.layout
 tpi/tpi.cbp
 tpi/tpi.layout
+tpi/tpi.depend
