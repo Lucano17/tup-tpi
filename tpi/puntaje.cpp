@@ -110,22 +110,22 @@ int calcularPuntos(int dadosLanzados[]){
                 puntosCalculados = escalera;
         }
     }
-    // Si no es una jugada especial, imprime la mejor combinaci¢n obtenida
+    // Si no es una jugada especial, imprime la mejor combinaciÂ¢n obtenida
     if(puntosCalculados < 25){
-        cout << "Mejor combinaci¢n: Dado " << dadoMaxActual
+        cout << "Mejor combinaciÂ¢n: Dado " << dadoMaxActual
         << " con " << valorCantMax << " igualdad/es"<< endl;
     }
     if(puntosCalculados == 50){
-        cout << "Mejor combinaci¢n: Generala " << endl;
+        cout << "Mejor combinaciÂ¢n: Generala " << endl;
     }
     if(puntosCalculados == 40){
-        cout << "Mejor combinaci¢n: Poker " << endl;
+        cout << "Mejor combinaciÂ¢n: Poker " << endl;
     }
     if(puntosCalculados == 30){
-        cout << "Mejor combinaci¢n: Full " << endl;
+        cout << "Mejor combinaciÂ¢n: Full " << endl;
     }
     if(puntosCalculados == 25){
-        cout << "Mejor combinaci¢n: Escalera " << endl;
+        cout << "Mejor combinaciÂ¢n: Escalera " << endl;
     }
     //
 
