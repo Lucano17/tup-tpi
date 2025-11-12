@@ -44,6 +44,7 @@ void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << endl;
 }
 
+
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
     cout << "¨Cuantos dados quieres volver a tirar? (0-5): ";
@@ -58,8 +59,6 @@ void relanzarDados(int dadosLanzados[]) {
         }
     }
 }
-
-
 
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
 int turnoJugador(string nombre) {
