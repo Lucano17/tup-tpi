@@ -12,6 +12,6 @@ void creditos(){
                 cout << "de la Fuente, Lucas" << endl;
                 cout << "Wolf, Federico" << endl;
                 cout << "Zunini, Francisco" << endl;
-                dibujarBordeX();
+                dibujarBordeXGrueso();
 }
 ///

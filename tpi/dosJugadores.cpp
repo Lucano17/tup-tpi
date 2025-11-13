@@ -33,7 +33,7 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
         cout << "Puntaje total hasta ahora:" << endl;
         cout << jugador1 << ": " << puntaje1 << " puntos" << endl;
         cout << jugador2 << ": " << puntaje2 << " puntos" << endl;
-        cout << "--------------------------------------" << endl;
+        dibujarBordeXFino();
 
         /// TURNO JUGADOR 1
         cout << "Turno de " << jugador1 << endl;
@@ -43,7 +43,7 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
         cout << "==== FIN DEL TURNO DE " << jugador1 << " ====\n";
         cout << "Puntaje total: " << jugador1 << " = " << puntaje1
              << " - " << jugador2 << " = " << puntaje2 << endl;
-        cout << "--------------------------------------" << endl;
+        dibujarBordeXFino();
 
         /// TURNO JUGADOR 2
         cout << "Turno de " << jugador2 << endl;
@@ -75,7 +75,11 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
     }
     else {
     cout << "\n=== EMPATE DE PUNTAJE ===" << endl;
+
     cout << "Se decide ganador por LOTERÍA..." << endl;
+
+    cout << "Se decide ganador por LOTERÃA..." << endl;
+
 
     // loteria
     int ganadorSorteado = rand() % 2;
