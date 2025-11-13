@@ -15,7 +15,7 @@ int main() {
 
 
 
-    char bordeX = 'Í';
+    char bordeX = 'ï¿½';
 
 
     int opcion;

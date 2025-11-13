@@ -7,7 +7,7 @@ using namespace std;
 const int CANT_DADOS = 5;
 const int MAX_LANZAMIENTOS = 3;
 
-/// FUNCIONES DE PUNTAJE MÁXIMO
+/// FUNCIONES DE PUNTAJE Mï¿½XIMO
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -21,7 +21,7 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "Aún no hay puntuaciones registradas." << endl;
+        cout << "Aï¿½n no hay puntuaciones registradas." << endl;
     }
     dibujarBordeXGrueso();
 }
@@ -41,7 +41,7 @@ void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS) {
         do {
             cout << "Dado " << (i + 1) << ": ";
             cin >> valor;
-        } while (valor < 1 || valor > 6); // Validar que el valor esté entre 1 y 6
+        } while (valor < 1 || valor > 6); // Validar que el valor estï¿½ entre 1 y 6
         dadosLanzados[i] = valor;
     }
 }
@@ -67,11 +67,11 @@ bool esGenerala(int dados[]) {
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
 
-    cout << "¿Cuántos dados querés volver a tirar? (0-5): ";
+    cout << "ï¿½Cuï¿½ntos dados querï¿½s volver a tirar? (0-5): ";
     cin >> cantidadReelanzar;
     if (cantidadReelanzar == 0) return;
 
-    cout << "Ingrese los números de los dados a relanzar (1-5, separados por espacio): ";
+    cout << "Ingrese los nï¿½meros de los dados a relanzar (1-5, separados por espacio): ";
     int indice; // declarar una sola vez
     for (int i = 0; i < cantidadReelanzar; i++) {
         cin >> indice;
@@ -88,9 +88,9 @@ int turnoJugador(string nombre) {
     char opcion;
     int puntosActuales = 0;
 
-    // --- Preguntar si quiere tirada manual o automática ---
+    // --- Preguntar si quiere tirada manual o automï¿½tica ---
     char modo;
-    cout << "Desea modo de tirada manual o automática? (m/a): ";
+    cout << "Desea modo de tirada manual o automï¿½tica? (m/a): ";
     cin >> modo;
 
     if (modo == 'm' || modo == 'M') {
@@ -113,7 +113,7 @@ int turnoJugador(string nombre) {
 
     // Hasta 3 lanzamientos
     while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "¿Deseas volver a lanzar algun dado? (s/n): ";
+        cout << "ï¿½Deseas volver a lanzar algun dado? (s/n): ";
         cin >> opcion;
         if (opcion == 's' || opcion == 'S') {
             relanzarDados(dadosLanzados);
