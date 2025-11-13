@@ -19,6 +19,7 @@ int verificarFull(int i, int puntosCalculados, int contadorDadosPorValor[]);
 void calcularTirada(int cantidadDados, int dadosLanzados[]);
 void relanzarDados(int dados[]);
 int turnoJugador(string nombre);
+int turnoPC();
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje);
 void verPuntacionMax(string mejorJugador, int mejorPuntaje);
 bool esGenerala(int dados[]);

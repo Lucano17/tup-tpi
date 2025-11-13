@@ -84,7 +84,7 @@ int calcularPuntos(int dadosLanzados[]){
                 break;
     }
     // Si no hay jugada especial, busca el dado con mayor valor
-    for(int i = 0; i < cantidadValores; i++){
+    for(int i = 0; i < cantidadDados; i++){
         if (dadosLanzados[i] > puntosCalculados){
             puntosCalculados = dadosLanzados[i];
             dadoMaxActual = dadosLanzados[i];

@@ -74,7 +74,8 @@ void relanzarDados(int dadosLanzados[]) {
 }
 
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
+int turnoJugador(string nombre) {
+    int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
     int puntosActuales = 0;
@@ -111,6 +112,29 @@ int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
             break;
         }
     }
+
+    return puntosActuales;
+}
+
+int turnoPC(){
+    int dadosLanzados[CANT_DADOS];
+    int puntosActuales = 0;
+
+    // PRIMER LANZAMIENTO: llenar el arreglo de dados y mostrarlo
+    lanzarDados(dadosLanzados, CANT_DADOS);
+
+    cout << "Turno de la PC Lanzamiento 1" << endl;
+    mostrarDados(dadosLanzados, CANT_DADOS);
+    puntosActuales = calcularPuntos(dadosLanzados);
+
+    //  Verificar si es generala servida (solo en el primer lanzamiento)
+    if (esGenerala(dadosLanzados)) {
+        cout << "\n======================================" << endl;
+        cout << "       GENERALA SERVIDA!" << endl;
+        cout << " La PC gan¢ el juego!" << endl;
+        cout << "======================================\n" << endl;
+        return 999; // Valor especial para indicar que se termin¢ el juego
+        }
 
     return puntosActuales;
 }
