@@ -26,6 +26,7 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje);
 void lanzarDados(int dadosLanzados[], int CANT_DADOS);
 void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS);
 bool esGenerala(int dados[]);
+int tresLanzamientos(string nombre, int puntosActuales);
 
 
 

@@ -90,42 +90,7 @@ int turnoJugador(string nombre) {
     char opcion;
     int puntosActuales = 0;
 
-    cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
-
-    lanzarDados(dadosLanzados, CANT_DADOS);
-    mostrarDados(dadosLanzados, CANT_DADOS);
-    puntosActuales = calcularPuntos(dadosLanzados);
-
-    if (esGenerala(dadosLanzados)) {
-        cout << "\n======================================" << endl;
-        cout << "       GENERALA SERVIDA!" << endl;
-        cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
-        cout << "======================================\n" << endl;
-        return 999;
-    }
-
-    // Hasta 3 lanzamientos
-    while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "Deseas volver a lanzar algun dado? (s/n): ";
-        cin >> opcion;
-        if (opcion == 's' || opcion == 'S') {
-            relanzarDados(dadosLanzados);
-            lanzamientos++;
-            cout << "Lanzamiento " << lanzamientos << " de " << nombre << endl;
-            mostrarDados(dadosLanzados, CANT_DADOS);
-            puntosActuales = calcularPuntos(dadosLanzados);
-
-            if (esGenerala(dadosLanzados)) {
-                cout << "\n======================================" << endl;
-                cout << "       GENERALA SERVIDA!" << endl;
-                cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
-                cout << "======================================\n" << endl;
-                return 999;
-            }
-        } else {
-            break;
-        }
-    }
+    puntosActuales = tresLanzamientos(nombre, puntosActuales);
     return puntosActuales;
 }
 
@@ -154,8 +119,6 @@ int turnoPC(){
 
 int turnoJugadorSolitario(string nombre) {
     int dadosLanzados[CANT_DADOS];
-    int lanzamientos = 1;
-    char opcion;
     int puntosActuales = 0;
 
     // --- Preguntar si quiere tirada manual o automatica ---
@@ -168,8 +131,18 @@ int turnoJugadorSolitario(string nombre) {
     } else {
         lanzarDados(dadosLanzados, CANT_DADOS);
     }
+    puntosActuales = tresLanzamientos(nombre, puntosActuales);
+    return puntosActuales;
+}
+
+int tresLanzamientos(string nombre, int puntosActuales){
+    int dadosLanzados[CANT_DADOS];
+    int lanzamientos = 1;
+    char opcion;
 
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
+
+    lanzarDados(dadosLanzados, CANT_DADOS);
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
 
@@ -203,6 +176,5 @@ int turnoJugadorSolitario(string nombre) {
             break;
         }
     }
-
     return puntosActuales;
 }
