@@ -22,7 +22,7 @@
 	<cstdlib>
 	"funciones.h"
 
-1763041659 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+1763044546 e:\user\documentos\github\tup-tpi\tpi\funciones.h
 	<iostream>
 
 1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
@@ -45,7 +45,7 @@
 	<iostream>
 	"funciones.h"
 
-1763042368 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1763045006 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 	<iostream>
 	"funciones.h"
 
@@ -132,7 +132,7 @@
 	<iostream>
 	"funciones.h"
 
-1763042030 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
+1763044531 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>

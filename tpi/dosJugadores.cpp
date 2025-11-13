@@ -36,7 +36,6 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
         dibujarBordeXFino();
 
         /// TURNO JUGADOR 1
-        cout << "Turno de " << jugador1 << endl;
         puntaje1 += turnoJugador(jugador1);
 
         /// MOSTRAR RESULTADOS ENTRE TURNOS
@@ -44,10 +43,14 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
         cout << "Puntaje total: " << jugador1 << " = " << puntaje1
              << " - " << jugador2 << " = " << puntaje2 << endl;
         dibujarBordeXFino();
+        cin.ignore();
+        cin.get();
 
         /// TURNO JUGADOR 2
-        cout << "Turno de " << jugador2 << endl;
+        dibujarBordeXGrueso();
         puntaje2 += turnoJugador(jugador2);
+        cin.ignore();
+        cin.get();
 
         ///  FIN DE RONDA -
         cout << "===== FIN DE LA RONDA " << ronda << " =====" << endl;
