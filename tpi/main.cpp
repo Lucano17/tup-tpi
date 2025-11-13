@@ -20,7 +20,7 @@ int main() {
         dibujarBordeXGrueso();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
-        cout << "3. Ver la puntuaciï¿½n mas alta" << endl;
+        cout << "3. Ver la puntuaci¢n mas alta" << endl;
         cout << "4. Ver creditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
@@ -57,9 +57,7 @@ int main() {
                 break;
 
             default:
-
-                cout << "Opciï¿½n invï¿½lida. Intente nuevamente." << endl << endl;
-
+                cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
         }
 
     } while (opcion != 0);
