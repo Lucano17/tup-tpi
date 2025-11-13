@@ -52,6 +52,11 @@ void unJugador() {
         cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
         cout << "Puntaje total: " << puntajeTotalPC << endl;
         dibujarBordeXFino();
+
+        cout << "Presione Enter para continuar...";
+
+        cin.ignore();
+        cin.get();
         ///
     }
 

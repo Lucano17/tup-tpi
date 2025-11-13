@@ -57,9 +57,7 @@ int main() {
                 break;
 
             default:
-
                 cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
-
         }
 
     } while (opcion != 0);

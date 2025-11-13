@@ -105,7 +105,6 @@ int turnoPC(){
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
 
-    //  Verificar si es generala servida (solo en el primer lanzamiento)
     if (esGenerala(dadosLanzados)) {
         cout << "\n======================================" << endl;
         cout << "       GENERALA SERVIDA!" << endl;
@@ -153,7 +152,6 @@ int tresLanzamientos(string nombre, int puntosActuales){
         cout << "======================================\n" << endl;
         return 999;
     }
-
     // Hasta 3 lanzamientos
     while (lanzamientos < MAX_LANZAMIENTOS) {
         cout << "Deseas volver a lanzar algun dado? (s/n): ";
