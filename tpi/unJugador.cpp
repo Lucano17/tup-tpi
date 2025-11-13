@@ -7,7 +7,7 @@ using namespace std;
 void unJugador() {
     srand(time(0));
 
-    string nombre1;
+    string nombre;
     cout << "Ingrese el nombre del jugador: ";
     cin >> nombre1;
     int puntosRondaJugador = 0;
@@ -23,7 +23,7 @@ void unJugador() {
         cout << "Puntaje total de" << nombre1 << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        cout << "Turno de " << nombre1 << endl;
+        int puntosRonda = turnoJugador(nombre);
 
         puntosRondaJugador = turnoJugador(nombre1);
         puntajeTotalJugador += puntosRondaJugador;
@@ -52,9 +52,8 @@ void unJugador() {
         cout << "Puntaje total: " << puntajeTotalPC << endl;
         dibujarBordeXFino();
 
-        cout << "Presione Enter para continuar...";
-        cin.ignore();
-        cin.get();
+        puntajeTotal += puntosRonda;
+        cout << "Puntaje total acumulado: " << puntajeTotal << endl;
     }
 
     dibujarBordeXGrueso();

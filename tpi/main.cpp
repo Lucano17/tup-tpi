@@ -12,6 +12,12 @@ int main() {
 
     string mejorJugador = "";
     int mejorPuntaje = 0;
+
+
+
+    char bordeX = '�';
+
+
     int opcion;
 
    do {
@@ -57,7 +63,11 @@ int main() {
                 break;
 
             default:
+
                 cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
+
+                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
+
         }
 
     } while (opcion != 0);

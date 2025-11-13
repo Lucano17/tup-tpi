@@ -1,0 +1,120 @@
+# depslib dependency file v1.0
+1761754801 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761577983 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.cpp
+	"variables.h"
+
+1761581729 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\variables.h
+	<string>
+
+1761755017 source:d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.cpp
+	"funciones.h"
+
+1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
+	<iostream>
+
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1761928189 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1761828178 source:e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1761828178 e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1761921718 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1761921717 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1761928296 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1762793651 c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\main.cpp
+	<iostream>
+	"funciones.h"
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1762794098 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1762789359 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1763000164 c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762962101 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\dosjugadores.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1762998862 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1762999917 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"funciones.h"
+
+1763000878 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
