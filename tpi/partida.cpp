@@ -10,7 +10,7 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 
-/// Puntuaci¢n M xima
+/// Puntuaci�n M�xima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -90,7 +90,7 @@ int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
         cout << "       GENERALA SERVIDA!" << endl;
         cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
         cout << "======================================\n" << endl;
-        return 999; // Valor especial para indicar que se termin¢ el juego
+        return 999; // Valor especial para indicar que se termin� el juego
         }
 
     // HASTA 3 LANZAMIENTOS POR TURNO
