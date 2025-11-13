@@ -21,7 +21,16 @@ void relanzarDados(int dados[]);
 int turnoJugador(string nombre);
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje);
 void verPuntacionMax(string mejorJugador, int mejorPuntaje);
+void lanzarDados(int dadosLanzados[], int CANT_DADOS);
+void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS);
+
+
+
+
 bool esGenerala(int dados[]);
+
+
+
 
 
 

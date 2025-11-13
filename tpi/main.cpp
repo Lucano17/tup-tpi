@@ -12,6 +12,12 @@ int main() {
 
     string mejorJugador = "";
     int mejorPuntaje = 0;
+
+
+
+    char bordeX = '�';
+
+
     int opcion;
 
    do {
@@ -25,7 +31,15 @@ int main() {
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeXGrueso();
-        cout << "Seleccione una opci�n: ";
+        cout << "Seleccione una opci¢n: ";
+
+        cout << "3. Ver la puntuacion mas alta" << endl;
+        cout << "4. Ver creditos" << endl;
+        cout << "5. Ver las reglas" << endl;
+        cout << "0. Salir" << endl;
+        dibujarBordeXGrueso();
+        cout << "Seleccione una opcion: ";
+
         cin >> opcion;
         cout << endl;
         system("cls");
@@ -57,7 +71,11 @@ int main() {
                 break;
 
             default:
+
                 cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
+
+                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
+
         }
 
     } while (opcion != 0);
