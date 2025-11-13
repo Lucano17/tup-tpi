@@ -59,7 +59,7 @@ int calcularPuntos(int dadosLanzados[]){
     for(int i = 0; i <= cantidadDados; i++){
         cout << "Dados " << i + 1 << ": " << contadorDadosPorValor[i] << endl;
     }
-
+    // Bucle para saber si los puntos calculados por igualdades son menores al dado de mayor valor
     for(int i = 0; i < cantidadValores; i++){
         if (contadorDadosPorValor[i] >= valorCantMax && dados[i] > dadoMaxActual){
             valorCantMax = contadorDadosPorValor[i];
@@ -83,10 +83,11 @@ int calcularPuntos(int dadosLanzados[]){
         default: cout << "Valor desconocido";
                 break;
     }
+    // Si no hay jugada especial, busca el dado con mayor valor
     for(int i = 0; i < cantidadValores; i++){
-        if (dados[i] > puntosCalculados){
-            puntosCalculados = dados[i];
-            dadoMaxActual = dados[i];
+        if (dadosLanzados[i] > puntosCalculados){
+            puntosCalculados = dadosLanzados[i];
+            dadoMaxActual = dadosLanzados[i];
             valorCantMax = 1;
         }
     }
@@ -94,43 +95,41 @@ int calcularPuntos(int dadosLanzados[]){
     for(int i = 0; i < cantidadDados; i++){
         if(contadorDadosPorValor[i] == 5){
             puntosCalculados = generalaPuntaje;
+            cout << "Mejor combinaci¢n: Generala" << endl;
+            cout << "Puntos obtenidos: " << puntosCalculados << endl;
+            return puntosCalculados;
         }
         if(contadorDadosPorValor[i] == 4){
             puntosCalculados = pokerPuntaje;
+            cout << "Mejor combinaci¢n: Poker " << endl;
+            cout << "Puntos obtenidos: " << puntosCalculados << endl;
+            return puntosCalculados;
         }
         // Full
         full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
         if (full != 0) {
-                puntosCalculados = full;
+            puntosCalculados = full;
+            cout << "Mejor combinaci¢n: Full " << endl;
+            cout << "Puntos obtenidos: " << puntosCalculados << endl;
+            return puntosCalculados;
         }
 
         // Escalera
         escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
         if (escalera != 0) {
-                puntosCalculados = escalera;
+            puntosCalculados = escalera;
+            cout << "Mejor combinaci¢n: Escalera " << endl;
+            cout << "Puntos obtenidos: " << puntosCalculados << endl;
+            return puntosCalculados;
         }
     }
     // Si no es una jugada especial, imprime la mejor combinaci¢n obtenida
     if(puntosCalculados < 25){
         cout << "Mejor combinaci¢n: Dado " << dadoMaxActual
         << " con " << valorCantMax << " igualdad/es"<< endl;
+        cout << "Puntos obtenidos: " << puntosCalculados << endl;
+        return puntosCalculados;
     }
-    if(puntosCalculados == 50){
-        cout << "Mejor combinaci¢n: Generala " << endl;
-    }
-    if(puntosCalculados == 40){
-        cout << "Mejor combinaci¢n: Poker " << endl;
-    }
-    if(puntosCalculados == 30){
-        cout << "Mejor combinaci¢n: Full " << endl;
-    }
-    if(puntosCalculados == 25){
-        cout << "Mejor combinaci¢n: Escalera " << endl;
-    }
-    //
-
-    cout << "Puntos obtenidos: " << puntosCalculados << endl;
-    return puntosCalculados;
 }
 
 int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[6]){
@@ -144,9 +143,9 @@ int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[6]){
     if(contadorDadosPorValor[5] == 1 && contadorDadosPorValor[1] == 1&&
         contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
         contadorDadosPorValor[4] == 1){
-        puntosCalculados = escaleraPuntaje;
+        return escaleraPuntaje;
     }
-    return puntosCalculados;
+    return 0;
 }
 
 int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
@@ -162,9 +161,9 @@ int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
             dosIgualdades = true;
         }
 
-        if(dosIgualdades == true && tresIgualdades == true){
-            puntosCalculados = fullPuntaje;
-        }
     }
-    return puntosCalculados;
+        if(dosIgualdades == true && tresIgualdades == true){
+            return fullPuntaje;
+        }
+    return 0;
 }

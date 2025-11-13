@@ -57,6 +57,9 @@ bool esGenerala(int dados[]) {
 
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
+    int valorCantMax = 0;
+    int dadoMaxActual = 0;
+
     cout << "¨Cuantos dados quieres volver a tirar? (0-5): ";
     cin >> cantidadReelanzar;
 
