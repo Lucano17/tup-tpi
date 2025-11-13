@@ -84,8 +84,7 @@ void relanzarDados(int dadosLanzados[]) {
 }
 
 /// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre) {
-    int dadosLanzados[CANT_DADOS];
+int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
     int puntosActuales = 0;

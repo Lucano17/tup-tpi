@@ -76,7 +76,7 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
     else {
     cout << "\n=== EMPATE DE PUNTAJE ===" << endl;
 
-    cout << "Se decide ganador por LOTERÍA..." << endl;
+    cout << "Se decide ganador por LOTERï¿½A..." << endl;
 
     cout << "Se decide ganador por LOTERÃA..." << endl;
 
