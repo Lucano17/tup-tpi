@@ -10,7 +10,7 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 
-/// Puntuaci¢n M xima
+/// Puntuaciï¿½n Mï¿½xima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -24,7 +24,7 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "A£n no hay puntuaciones registradas." << endl;
+        cout << "AÃºn no hay puntuaciones registradas." << endl;
     }
     dibujarBordeXGrueso();
 }
@@ -36,6 +36,7 @@ void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
     }
 }
 
+///
 
 /// FUNCION PARA MOSTRAR LOS DADOS EN PANTALLA
 void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
@@ -57,10 +58,7 @@ bool esGenerala(int dados[]) {
 
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
-    int valorCantMax = 0;
-    int dadoMaxActual = 0;
-
-    cout << "¨Cuantos dados quieres volver a tirar? (0-5): ";
+    cout << "Â¨Cuantos dados quieres volver a tirar? (0-5): ";
     cin >> cantidadReelanzar;
 
     for (int i = 0; i < cantidadReelanzar; i++) {
@@ -92,12 +90,12 @@ int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
         cout << "       GENERALA SERVIDA!" << endl;
         cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
         cout << "======================================\n" << endl;
-        return 999; // Valor especial para indicar que se termin¢ el juego
+        return 999; // Valor especial para indicar que se terminï¿½ el juego
         }
 
     // HASTA 3 LANZAMIENTOS POR TURNO
     while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "¨Deseas volver a lanzar algun dado? (s/n): ";
+        cout << "Â¨Deseas volver a lanzar algun dado? (s/n): ";
         cin >> opcion;
 
         if (opcion == 's' || opcion == 'S') {

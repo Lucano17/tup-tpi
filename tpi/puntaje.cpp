@@ -95,13 +95,13 @@ int calcularPuntos(int dadosLanzados[]){
     for(int i = 0; i < cantidadDados; i++){
         if(contadorDadosPorValor[i] == 5){
             puntosCalculados = generalaPuntaje;
-            cout << "Mejor combinaci¢n: Generala" << endl;
+            cout << "Mejor combinaciï¿½n: Generala" << endl;
             cout << "Puntos obtenidos: " << puntosCalculados << endl;
             return puntosCalculados;
         }
         if(contadorDadosPorValor[i] == 4){
             puntosCalculados = pokerPuntaje;
-            cout << "Mejor combinaci¢n: Poker " << endl;
+            cout << "Mejor combinaciï¿½n: Poker " << endl;
             cout << "Puntos obtenidos: " << puntosCalculados << endl;
             return puntosCalculados;
         }
@@ -109,7 +109,7 @@ int calcularPuntos(int dadosLanzados[]){
         full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
         if (full != 0) {
             puntosCalculados = full;
-            cout << "Mejor combinaci¢n: Full " << endl;
+            cout << "Mejor combinaciï¿½n: Full " << endl;
             cout << "Puntos obtenidos: " << puntosCalculados << endl;
             return puntosCalculados;
         }
@@ -118,14 +118,14 @@ int calcularPuntos(int dadosLanzados[]){
         escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
         if (escalera != 0) {
             puntosCalculados = escalera;
-            cout << "Mejor combinaci¢n: Escalera " << endl;
+            cout << "Mejor combinaciï¿½n: Escalera " << endl;
             cout << "Puntos obtenidos: " << puntosCalculados << endl;
             return puntosCalculados;
         }
     }
-    // Si no es una jugada especial, imprime la mejor combinaci¢n obtenida
+    // Si no es una jugada especial, imprime la mejor combinaciÂ¢n obtenida
     if(puntosCalculados < 25){
-        cout << "Mejor combinaci¢n: Dado " << dadoMaxActual
+        cout << "Mejor combinaciÂ¢n: Dado " << dadoMaxActual
         << " con " << valorCantMax << " igualdad/es"<< endl;
         cout << "Puntos obtenidos: " << puntosCalculados << endl;
         return puntosCalculados;
