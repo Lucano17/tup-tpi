@@ -2,43 +2,36 @@
 #include <cstdlib>
 #include <ctime>
 #include "funciones.h"
-
 using namespace std;
 
-void unJugador(){
+void unJugador() {
     srand(time(0));
 
-    string nombre1;
+    string nombre;
     cout << "Ingrese el nombre del jugador: ";
-    cin >> nombre1;
+    cin >> nombre;
 
     int puntajeTotal = 0;
 
-    // Bucle de rondas
-    for (int ronda = 1; ronda <= 5; ronda++){
-        cout << "======================================" << endl;
+    //  Bucle de 5 rondas
+    for (int ronda = 1; ronda <= 5; ronda++) {
+        cout << "\n======================================" << endl;
         cout << "           RONDA " << ronda << " DE 5" << endl;
-        cout << "======================================" << endl;
-        cout << "Puntaje total hasta ahora: " << puntajeTotal << endl;
-        cout << "--------------------------------------" << endl;
+        cout << "======================================\n" << endl;
 
-        cout << "Turno de " << nombre1 << endl;
+        int puntosRonda = turnoJugador(nombre);
 
-        tiradaDeDados(); // Llama a la función de tirada de dados tal cual está en funciones.cpp
+        // Si saca generala servida, cortar el juego
+        if (puntosRonda == 999) {
+            cout << "\nEl juego terminó por generala servida!" << endl;
+            break;
+        }
 
-        cout << "\n==== FIN DEL TURNO DE " << nombre1 << " ====\n";
-        cout << "Puntaje total: " << puntajeTotal << endl;
-        cout << "--------------------------------------" << endl;
-
-        cout << "Presione Enter para continuar...";
-        cin.ignore();
-        cin.get();
+        puntajeTotal += puntosRonda;
+        cout << "Puntaje total acumulado: " << puntajeTotal << endl;
     }
 
     cout << "\n======================================" << endl;
-    cout << "          FIN DEL JUEGO" << endl;
-    cout << "======================================" << endl;
-    cout << nombre1 << ": " << puntajeTotal << " puntos" << endl;
-
-    cout << "Gracias por jugar!" << endl;
+    cout << "     FIN DEL JUEGO - PUNTAJE FINAL: " << puntajeTotal << endl;
+    cout << "======================================\n" << endl;
 }

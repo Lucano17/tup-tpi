@@ -4,313 +4,114 @@
 
 using namespace std;
 
-/// Jugar
-void jugar(){
-    int cantidadRondas = 5;
-    int cantidadTiradasXRonda = 3;
-}
-///
+/// CONSTANTES
+const int CANT_DADOS = 5;
+const int MAX_LANZAMIENTOS = 3;
 
-/** Un jugador
-void unJugador(){
-    string nombre1 = "Lucas";
-    cout << "Ingrese el nombre del jugador: ";
-    cin >> nombre1;
-    cout << "Iniciando juego para un jugador..." << endl;
-    cout << "Buena suerte " << nombre1 << endl;
-    // Partida
-    cout << "Primer tirada" << endl;
-    tiradaDeDados();
-}
-*/
 
-/// Dos jugadores
-void dosJugadores(){
-    string nombre1;
-    string nombre2;
-    cout << "Ingrese el nombre del jugador 1: ";
-    cin >> nombre1;
-    cout << "Ingrese el nombre del jugador 2: ";
-    cin >> nombre2;
-    cout << "Iniciando juego para dos jugadores..." << endl;
-    cout << "Buena suerte " << nombre1 << " y " << nombre2 << endl;
-    cout << endl;
-}
-///
 
-/// Puntuación máxima
-void verPuntacionMax(){
-    string mejorJugador;
-    int mejorPuntaje = 0;
+/// Puntuaci¢n M xima
+void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
+    if(puntaje > mejorPuntaje){
+        mejorPuntaje = puntaje;
+        mejorJugador = jugador;
+    }
+}
+
+void verPuntacionMax(string mejorJugador, int mejorPuntaje){
     cout << "==== PUNTUACION MAS ALTA ====" << endl;
-    if (mejorPuntaje > 0) {
+    if(mejorPuntaje > 0){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
         cout << "Aún no hay puntuaciones registradas." << endl;
     }
-    dibujarBordeX();
+    dibujarBordeXGrueso();
 }
+
+/// FUNCION PARA LANZAR DADOS
+void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
+    for (int i = 0; i < CANT_DADOS; i++) {
+        dadosLanzados[i] = rand() % 6 + 1;
+    }
+}
+
 ///
 
-
-
-/// Partida
-int lanzarUnDado(){
-    int num = (rand() % 6) + 1;
-    return num;
-}
-void tiradaDeDados(){
-    const int cantidadDados = 5;
-    int dadosLanzados[cantidadDados];
-
-    // Primera tirada
-    for(int i = 0; i < cantidadDados; i++){
-        dadosLanzados[i] = lanzarUnDado();
-    }
-
-    // Mostrar primera tirada
-    cout << "Primera tirada: ";
-    for(int i = 0; i < cantidadDados; i++){
-        cout << dadosLanzados[i] << " ";
+/// FUNCION PARA MOSTRAR LOS DADOS EN PANTALLA
+void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
+    cout << "Dados: ";
+    for (int i = 0; i < CANT_DADOS; i++) {
+        cout << "[" << dadosLanzados[i] << "] ";
     }
     cout << endl;
+}
 
-    // ===== Verificar Generala Servida en la primera tirada =====
-    int contadorDadosPorValor[6] = {0,0,0,0,0,0};
-    for(int i = 0; i < cantidadDados; i++){
-        switch(dadosLanzados[i]){
-            case 1: contadorDadosPorValor[0]++; break;
-            case 2: contadorDadosPorValor[1]++; break;
-            case 3: contadorDadosPorValor[2]++; break;
-            case 4: contadorDadosPorValor[3]++; break;
-            case 5: contadorDadosPorValor[4]++; break;
-            case 6: contadorDadosPorValor[5]++; break;
-        }
+/// NUEVA FUNCION: verificar si es Generala servida
+bool esGenerala(int dados[]) {
+    for (int i = 1; i < CANT_DADOS; i++) {
+        if (dados[i] != dados[0]) return false;
     }
-
-    bool generalaServida = false;
-    for(int i = 0; i < 6; i++){
-        if(contadorDadosPorValor[i] == 5){
-            cout << "¡¡Generala Servida!! Puntaje 250" << endl;
-            generalaServida = true;
-        }
-    }
-
-    if(generalaServida){
-        return; // Termina la función si salió generala servida
-    }
-
-    // Si no es generala servida, continuar con las siguientes tiradas
-    calcularTirada(cantidadDados, dadosLanzados);
-    calcularPuntos(dadosLanzados);
+    return true;
 }
 
 
-/// Puntaje
-void calcularPuntos(int dadosLanzados[]){
-    //
-    int escalera = 0;
-    int full = 0;
-    int pokerPuntaje = 40;
-    int generalaPuntaje = 50;
-    bool tresIgualdades = false;
-    bool dosIgualdades = false;
-    //
-    int cantidadDados = 5;
-    int cantidadValores = 6;
-    int dados[6] = {1, 2, 3, 4, 5, 6};
-    //
-    int cantidadUno = 0;
-    int cantidadDos = 0;
-    int cantidadTres = 0;
-    int cantidadCuatro = 0;
-    int cantidadCinco = 0;
-    int cantidadSeis = 0;
-    int contadorDadosPorValor[6];
-    //
-    int puntosCalculados = 0;
-    int valorCantMax = 0;
-    int listaDadosMax[5];
-    int dadoMaxActual = 0;
-    bool generalaServida = false;
-    //
-    for(int i = 0; i < cantidadDados; i++){
-        if (dadosLanzados[i] == 1){
-            cantidadUno++;
-        }
-        if (dadosLanzados[i] == 2){
-            cantidadDos++;
-        }
-        if (dadosLanzados[i] == 3){
-            cantidadTres++;
-        }
-        if (dadosLanzados[i] == 4){
-            cantidadCuatro++;
-        }
-        if (dadosLanzados[i] == 5){
-            cantidadCinco++;
-        }
-        if (dadosLanzados[i] == 6){
-            cantidadSeis++;
+void relanzarDados(int dadosLanzados[]) {
+    int cantidadReelanzar;
+    cout << "¿Cuántos dados querés volver a tirar? (0-5): ";
+    cin >> cantidadReelanzar;
+
+    if (cantidadReelanzar == 0) return;
+
+    cout << "Ingrese los números de los dados a relanzar (1-5, separados por espacio): ";
+    int indice;
+    for (int i = 0; i < cantidadReelanzar; i++) {
+        cin >> indice;
+        if (indice >= 1 && indice <= 5) {
+            dadosLanzados[indice - 1] = rand() % 6 + 1; // Re-lanza el dado elegido
         }
     }
-
-    contadorDadosPorValor[0] = cantidadUno;
-    contadorDadosPorValor[1] = cantidadDos;
-    contadorDadosPorValor[2] = cantidadTres;
-    contadorDadosPorValor[3] = cantidadCuatro;
-    contadorDadosPorValor[4] = cantidadCinco;
-    contadorDadosPorValor[5] = cantidadSeis;
-
-    for(int i = 0; i <= cantidadDados; i++){
-        cout << "Dados " << i + 1 << ": " << contadorDadosPorValor[i] << endl;
-    }
-
-    for(int i = 0; i < cantidadValores; i++){
-        if (contadorDadosPorValor[i] >= valorCantMax && dados[i] > dadoMaxActual){
-            valorCantMax = contadorDadosPorValor[i];
-            dadoMaxActual = dados[i];
-        }
-    }
-
-    switch(dadoMaxActual){
-        case 1: puntosCalculados = valorCantMax * 1;
-                break;
-        case 2: puntosCalculados = valorCantMax * 2;
-                break;
-        case 3: puntosCalculados = valorCantMax * 3;
-                break;
-        case 4: puntosCalculados = valorCantMax * 4;
-                break;
-        case 5: puntosCalculados = valorCantMax * 5;
-                break;
-        case 6: puntosCalculados = valorCantMax * 6;
-                break;
-        default: cout << "Valor desconocido";
-                break;
-    }
-    for(int i = 0; i < cantidadValores; i++){
-        if (dados[i] > puntosCalculados){
-            puntosCalculados = dados[i];
-            dadoMaxActual = dados[i];
-            valorCantMax = 1;
-        }
-    }
-    // Condicionales para calcular escalera, full, poker y generala
-    for(int i = 0; i < cantidadDados; i++){
-        if(contadorDadosPorValor[i] == 5){
-            puntosCalculados = generalaPuntaje;
-        }
-        if(contadorDadosPorValor[i] == 4){
-            puntosCalculados = pokerPuntaje;
-        }
-        if(contadorDadosPorValor[i] == 3){
-            tresIgualdades = true;
-        }
-        // Full
-        full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
-        if (full != 0) puntosCalculados = full;
-
-        // Escalera
-        escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
-        if (escalera != 0) puntosCalculados = escalera;
-        //
-    }
-    //
-
-    cout << "Mejor combinación: Dado " << dadoMaxActual
-    << " con " << valorCantMax << " igualdad/es"<< endl;
-
-    cout << "Puntos obtenidos: " << puntosCalculados << endl;
 }
 
-    void pruebas(){
-        int cantidadDados = 5;
-        int puntosCalculados = 0;
-        int contadorDadosPorValor[6] = {3, 2, 0, 0, 0, 0};
-        int escalera = 0;
-        int full = 0;
-        int pokerPuntaje = 40;
-        int generalaPuntaje = 50;
-        int generalaServidaPuntaje = 250;
+/// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
+int turnoJugador(string nombre) {int dadosLanzados[CANT_DADOS];
+    int lanzamientos = 1;
+    char opcion;
+    int puntosActuales = 0;
 
-        for(int i = 0; i < cantidadDados; i++){
-            // Generala
-            if(contadorDadosPorValor[i] == 5){
-                puntosCalculados = generalaPuntaje;
-            }
-            // Poker
-            if(contadorDadosPorValor[i] == 4){
-                puntosCalculados = pokerPuntaje;
-            }
-            // Full
-            full = verificarFull(i, puntosCalculados, contadorDadosPorValor);
-            if (full != 0) puntosCalculados = full;
-        }
-        // Escalera
-        escalera = verificarEscalera(puntosCalculados, contadorDadosPorValor);
-        if (escalera != 0) puntosCalculados = escalera;
-        //
+    // PRIMER LANZAMIENTO: llenar el arreglo de dados y mostrarlo
+    lanzarDados(dadosLanzados, CANT_DADOS);
 
-    cout << "Puntaje: " << puntosCalculados << endl;
+    cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
+    mostrarDados(dadosLanzados, CANT_DADOS);
+    puntosActuales = calcularPuntos(dadosLanzados);
+
+    //  Verificar si es generala servida
+    if (esGenerala(dadosLanzados)) {
+    cout << "\n======================================" << endl;
+    cout << "       GENERALA SERVIDA!" << endl;
+    cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
+    cout << "======================================\n" << endl;
+    return 999; // Valor especial para indicar que se terminó el juego
 }
 
-int verificarEscalera(int puntosCalculados, int contadorDadosPorValor[6]){
-    int escaleraPuntaje = 25;
-    if(contadorDadosPorValor[0] == 1 && contadorDadosPorValor[1] == 1&&
-        contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-        contadorDadosPorValor[4] == 1){
-        puntosCalculados = escaleraPuntaje;
-    }
 
-    if(contadorDadosPorValor[5] == 1 && contadorDadosPorValor[1] == 1&&
-        contadorDadosPorValor[2] == 1 && contadorDadosPorValor[3] == 1 &&
-        contadorDadosPorValor[4] == 1){
-        puntosCalculados = escaleraPuntaje;
-    }
-    return puntosCalculados;
-}
+    // HASTA 3 LANZAMIENTOS POR TURNO
+    while (lanzamientos < MAX_LANZAMIENTOS) {
+        cout << "¨Deseas volver a lanzar algun dado? (s/n): ";
+        cin >> opcion;
 
-int verificarFull(int i, int puntosCalculados,int contadorDadosPorValor[6]){
-    int fullPuntaje = 30;
-    bool tresIgualdades = false;
-    bool dosIgualdades = false;
+        if (opcion == 's' || opcion == 'S') {
+            relanzarDados(dadosLanzados);
+            lanzamientos++;
 
-    for(int i = 0; i < 6; i++){
-        if(contadorDadosPorValor[i] == 3){
-            tresIgualdades = true;
-        }
-        if(contadorDadosPorValor[i] == 2){
-            dosIgualdades = true;
-        }
-
-        if(dosIgualdades == true && tresIgualdades == true){
-            puntosCalculados = fullPuntaje;
-        }
-    }
-    return puntosCalculados;
-}
-
-void calcularTirada(int cantidadDados, int dadosLanzados[5]){
-    for(int tirada = 1; tirada <= 3; tirada++){
-        cout << "Tirada nro: " << tirada << endl;
-        for(int i = 0; i < cantidadDados; i++){
-            cout << dadosLanzados[i] << " ";
-        }
-        cout << endl;
-
-        if(tirada == 3) break;
-
-        cout << "Ingresa 1 si queres volver a tirar ese dado, 0 para mantenerlo (separados por espacios): ";
-        int eleccion;
-        for(int i = 0; i < cantidadDados; i++){
-            cin >> eleccion;
-            if(eleccion == 1){
-                dadosLanzados[i] = lanzarUnDado();
-            }
+            cout << "Lanzamiento " << lanzamientos << " de " << nombre << endl;
+            mostrarDados(dadosLanzados, CANT_DADOS);
+            puntosActuales = calcularPuntos(dadosLanzados);
+        } else {
+            break;
         }
     }
 
-    cout << "Resultado final: ";
+    return puntosActuales;
 }
