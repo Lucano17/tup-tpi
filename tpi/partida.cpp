@@ -7,7 +7,9 @@ using namespace std;
 const int CANT_DADOS = 5;
 const int MAX_LANZAMIENTOS = 3;
 
-/// FUNCIONES DE PUNTAJE M�XIMO
+
+
+/// Puntuaci�n M�xima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -133,6 +135,29 @@ int turnoJugador(string nombre) {
             break;
         }
     }
+
+    return puntosActuales;
+}
+
+int turnoPC(){
+    int dadosLanzados[CANT_DADOS];
+    int puntosActuales = 0;
+
+    // PRIMER LANZAMIENTO: llenar el arreglo de dados y mostrarlo
+    lanzarDados(dadosLanzados, CANT_DADOS);
+
+    cout << "Turno de la PC Lanzamiento 1" << endl;
+    mostrarDados(dadosLanzados, CANT_DADOS);
+    puntosActuales = calcularPuntos(dadosLanzados);
+
+    //  Verificar si es generala servida (solo en el primer lanzamiento)
+    if (esGenerala(dadosLanzados)) {
+        cout << "\n======================================" << endl;
+        cout << "       GENERALA SERVIDA!" << endl;
+        cout << " La PC gan� el juego!" << endl;
+        cout << "======================================\n" << endl;
+        return 999; // Valor especial para indicar que se termin� el juego
+        }
 
     return puntosActuales;
 }

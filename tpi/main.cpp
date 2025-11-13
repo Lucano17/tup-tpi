@@ -31,15 +31,7 @@ int main() {
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeXGrueso();
-        cout << "Seleccione una opci¢n: ";
-
-        cout << "3. Ver la puntuacion mas alta" << endl;
-        cout << "4. Ver creditos" << endl;
-        cout << "5. Ver las reglas" << endl;
-        cout << "0. Salir" << endl;
-        dibujarBordeXGrueso();
-        cout << "Seleccione una opcion: ";
-
+        cout << "Seleccione una opci�n: ";
         cin >> opcion;
         cout << endl;
         system("cls");

@@ -9,29 +9,57 @@ void unJugador() {
 
     string nombre;
     cout << "Ingrese el nombre del jugador: ";
-    cin >> nombre;
+    cin >> nombre1;
+    int puntosRondaJugador = 0;
+    int puntajeTotalJugador = 0;
+    int puntosRondaPC = 0;
+    int puntajeTotalPC = 0;
 
-    int puntajeTotal = 0;
-
-    //  Bucle de 5 rondas
-    for (int ronda = 1; ronda <= 5; ronda++) {
-        cout << "\n======================================" << endl;
-        cout << "           RONDA " << ronda << " DE 5" << endl;
-        cout << "======================================\n" << endl;
+    // Bucle de rondas
+    for (int ronda = 1; ronda <= 10; ronda++){
+        dibujarBordeXGrueso();
+        cout << "           RONDA " << ronda << " DE 10" << endl;
+        dibujarBordeXGrueso();
+        cout << "Puntaje total de" << nombre1 << ": " <<puntajeTotalJugador << endl;
+        dibujarBordeXFino();
 
         int puntosRonda = turnoJugador(nombre);
 
-        // Si saca generala servida, cortar el juego
-        if (puntosRonda == 999) {
-            cout << "\nEl juego terminó por generala servida!" << endl;
-            break;
-        }
+        puntosRondaJugador = turnoJugador(nombre1);
+        puntajeTotalJugador += puntosRondaJugador;
+
+        cout << "\n==== FIN DEL TURNO DE " << nombre1 << " ====\n";
+        cout << "Puntaje total: " << puntajeTotalJugador << endl;
+        dibujarBordeXFino();
+
+        cout << "Presione Enter para continuar...";
+
+        cin.ignore();
+        cin.get();
+
+        dibujarBordeXGrueso();
+        cout << "           RONDA " << ronda << " DE 10" << endl;
+        dibujarBordeXGrueso();
+        cout << "Puntaje total de la PC: " <<puntajeTotalPC << endl;
+        dibujarBordeXFino();
+
+        cout << "Turno de la PC" << endl;
+
+        puntosRondaPC = turnoPC();
+        puntajeTotalPC += puntosRondaPC;
+
+        cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
+        cout << "Puntaje total: " << puntajeTotalPC << endl;
+        dibujarBordeXFino();
 
         puntajeTotal += puntosRonda;
         cout << "Puntaje total acumulado: " << puntajeTotal << endl;
     }
 
-    cout << "\n======================================" << endl;
-    cout << "     FIN DEL JUEGO - PUNTAJE FINAL: " << puntajeTotal << endl;
-    cout << "======================================\n" << endl;
+    dibujarBordeXGrueso();
+    cout << "          FIN DEL JUEGO" << endl;
+    dibujarBordeXGrueso();
+    cout << nombre1 << ": " << puntajeTotalJugador << " puntos" << endl;
+    cout << "PC: " << puntajeTotalPC << " puntos" << endl;
+    cout << "Gracias por jugar!" << endl;
 }
