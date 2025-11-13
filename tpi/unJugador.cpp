@@ -24,7 +24,7 @@ void unJugador() {
         cout << "Puntaje total de " << nombre << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        puntosRondaJugador = turnoJugador(nombre);
+        puntosRondaJugador = turnoJugadorSolitario(nombre);
         puntajeTotalJugador += puntosRondaJugador;
 
         cout << "\n==== FIN DEL TURNO DE " << nombre << " ====\n";
