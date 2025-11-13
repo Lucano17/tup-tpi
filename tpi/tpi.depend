@@ -75,3 +75,46 @@
 	<ctime>
 	"funciones.h"
 
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\creditos.cpp
+	<iostream>
+	"funciones.h"
+
+1763000164 c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1762962101 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\dosjugadores.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1762961891 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1762998862 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1762999917 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"funciones.h"
+
+1763000878 source:c:\users\franc\onedrive\escritorio\repos\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+

@@ -12,13 +12,12 @@ int main() {
 
     string mejorJugador = "";
     int mejorPuntaje = 0;
-<<<<<<< HEAD
+
 
 
     char bordeX = '�';
 
-=======
->>>>>>> origin/fede-branch
+
     int opcion;
 
    do {
@@ -27,21 +26,20 @@ int main() {
         dibujarBordeXGrueso();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
-<<<<<<< HEAD
         cout << "3. Ver la puntuaci¢n mas alta" << endl;
         cout << "4. Ver cr‚ditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeXGrueso();
         cout << "Seleccione una opci¢n: ";
-=======
+
         cout << "3. Ver la puntuacion mas alta" << endl;
         cout << "4. Ver creditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeXGrueso();
         cout << "Seleccione una opcion: ";
->>>>>>> origin/fede-branch
+
         cin >> opcion;
         cout << endl;
         system("cls");
@@ -73,11 +71,11 @@ int main() {
                 break;
 
             default:
-<<<<<<< HEAD
+
                 cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
-=======
+
                 cout << "Opcion invalida. Intente nuevamente." << endl << endl;
->>>>>>> origin/fede-branch
+
         }
 
     } while (opcion != 0);
