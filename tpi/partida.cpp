@@ -9,7 +9,7 @@ const int MAX_LANZAMIENTOS = 3;
 
 
 
-/// Puntuaci�n M�xima
+/// Puntuacion Maxima
 void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
     if(puntaje > mejorPuntaje){
         mejorPuntaje = puntaje;
@@ -23,7 +23,7 @@ void verPuntacionMax(string mejorJugador, int mejorPuntaje){
         cout << "Jugador: " << mejorJugador << endl;
         cout << "Puntaje: " << mejorPuntaje << endl;
     } else {
-        cout << "A�n no hay puntuaciones registradas." << endl;
+        cout << "Aun no hay puntuaciones registradas." << endl;
     }
     dibujarBordeXGrueso();
 }
@@ -43,7 +43,7 @@ void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS) {
         do {
             cout << "Dado " << (i + 1) << ": ";
             cin >> valor;
-        } while (valor < 1 || valor > 6); // Validar que el valor est� entre 1 y 6
+        } while (valor < 1 || valor > 6); // Validar que el valor este entre 1 y 6
         dadosLanzados[i] = valor;
     }
 }
@@ -69,11 +69,11 @@ bool esGenerala(int dados[]) {
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
 
-    cout << "�Cu�ntos dados quer�s volver a tirar? (0-5): ";
+    cout << "Cuantos dados queres volver a tirar? (0-5): ";
     cin >> cantidadReelanzar;
     if (cantidadReelanzar == 0) return;
 
-    cout << "Ingrese los n�meros de los dados a relanzar (1-5, separados por espacio): ";
+    cout << "Ingrese los numeros de los dados a relanzar (1-5, separados por espacio): ";
     int indice; // declarar una sola vez
     for (int i = 0; i < cantidadReelanzar; i++) {
         cin >> indice;
@@ -92,7 +92,7 @@ int turnoJugador(string nombre) {
 
     // --- Preguntar si quiere tirada manual o autom�tica ---
     char modo;
-    cout << "Desea modo de tirada manual o autom�tica? (m/a): ";
+    cout << "Desea modo de tirada manual o automatica? (m/a): ";
     cin >> modo;
 
     if (modo == 'm' || modo == 'M') {
@@ -115,7 +115,7 @@ int turnoJugador(string nombre) {
 
     // Hasta 3 lanzamientos
     while (lanzamientos < MAX_LANZAMIENTOS) {
-        cout << "�Deseas volver a lanzar algun dado? (s/n): ";
+        cout << "Deseas volver a lanzar algun dado? (s/n): ";
         cin >> opcion;
         if (opcion == 's' || opcion == 'S') {
             relanzarDados(dadosLanzados);
@@ -154,7 +154,7 @@ int turnoPC(){
     if (esGenerala(dadosLanzados)) {
         cout << "\n======================================" << endl;
         cout << "       GENERALA SERVIDA!" << endl;
-        cout << " La PC gan� el juego!" << endl;
+        cout << " La PC gano el juego!" << endl;
         cout << "======================================\n" << endl;
         return 999; // Valor especial para indicar que se termin� el juego
         }

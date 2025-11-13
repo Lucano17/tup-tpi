@@ -12,12 +12,6 @@ int main() {
 
     string mejorJugador = "";
     int mejorPuntaje = 0;
-
-
-
-    char bordeX = 'ï¿½';
-
-
     int opcion;
 
    do {
@@ -26,12 +20,12 @@ int main() {
         dibujarBordeXGrueso();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
-        cout << "3. Ver la puntuaciÂ¢n mas alta" << endl;
-        cout << "4. Ver crâ€šditos" << endl;
+        cout << "3. Ver la puntuaci¢n mas alta" << endl;
+        cout << "4. Ver creditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
         dibujarBordeXGrueso();
-        cout << "Seleccione una opciï¿½n: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cout << endl;
         system("cls");
@@ -64,9 +58,7 @@ int main() {
 
             default:
 
-                cout << "OpciÂ¢n invÂ lida. Intente nuevamente." << endl << endl;
-
-                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
+                cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
 
         }
 

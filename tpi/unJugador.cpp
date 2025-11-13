@@ -9,7 +9,7 @@ void unJugador() {
 
     string nombre;
     cout << "Ingrese el nombre del jugador: ";
-    cin >> nombre1;
+    cin >> nombre;
     int puntosRondaJugador = 0;
     int puntajeTotalJugador = 0;
     int puntosRondaPC = 0;
@@ -17,18 +17,17 @@ void unJugador() {
 
     // Bucle de rondas
     for (int ronda = 1; ronda <= 10; ronda++){
+        /// Jugador
         dibujarBordeXGrueso();
         cout << "           RONDA " << ronda << " DE 10" << endl;
         dibujarBordeXGrueso();
-        cout << "Puntaje total de" << nombre1 << ": " <<puntajeTotalJugador << endl;
+        cout << "Puntaje total de " << nombre << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        int puntosRonda = turnoJugador(nombre);
-
-        puntosRondaJugador = turnoJugador(nombre1);
+        puntosRondaJugador = turnoJugador(nombre);
         puntajeTotalJugador += puntosRondaJugador;
 
-        cout << "\n==== FIN DEL TURNO DE " << nombre1 << " ====\n";
+        cout << "\n==== FIN DEL TURNO DE " << nombre << " ====\n";
         cout << "Puntaje total: " << puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
@@ -36,7 +35,9 @@ void unJugador() {
 
         cin.ignore();
         cin.get();
+        ///
 
+        /// PC
         dibujarBordeXGrueso();
         cout << "           RONDA " << ronda << " DE 10" << endl;
         dibujarBordeXGrueso();
@@ -51,15 +52,13 @@ void unJugador() {
         cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
         cout << "Puntaje total: " << puntajeTotalPC << endl;
         dibujarBordeXFino();
-
-        puntajeTotal += puntosRonda;
-        cout << "Puntaje total acumulado: " << puntajeTotal << endl;
+        ///
     }
 
     dibujarBordeXGrueso();
     cout << "          FIN DEL JUEGO" << endl;
     dibujarBordeXGrueso();
-    cout << nombre1 << ": " << puntajeTotalJugador << " puntos" << endl;
+    cout << nombre << ": " << puntajeTotalJugador << " puntos" << endl;
     cout << "PC: " << puntajeTotalPC << " puntos" << endl;
     cout << "Gracias por jugar!" << endl;
 }
