@@ -25,7 +25,7 @@ void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int 
 void verPuntacionMax(string mejorJugador, int mejorPuntaje);
 void lanzarDados(int dadosLanzados[], int CANT_DADOS);
 void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS);
-bool esGenerala(int dados[]);
+bool esGenerala(int dados[], int CANT_DADOS);
 int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[], int CANT_DADOS);
 
 

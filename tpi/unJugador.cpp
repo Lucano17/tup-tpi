@@ -4,7 +4,7 @@
 #include "funciones.h"
 using namespace std;
 
-void unJugador() {
+void unJugador(int CANT_DADOS, int CANT_RONDAS) {
     srand(time(0));
 
     string nombre;
@@ -24,7 +24,7 @@ void unJugador() {
         cout << "Puntaje total de " << nombre << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        puntosRondaJugador = turnoJugadorSolitario(nombre);
+        puntosRondaJugador = turnoJugadorSolitario(CANT_DADOS, nombre);
         puntajeTotalJugador += puntosRondaJugador;
 
         cout << "\n==== FIN DEL TURNO DE " << nombre << " ====\n";
@@ -46,7 +46,7 @@ void unJugador() {
 
         cout << "Turno de la PC" << endl;
 
-        puntosRondaPC = turnoPC();
+        puntosRondaPC = turnoPC(CANT_DADOS);
         puntajeTotalPC += puntosRondaPC;
 
         cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
