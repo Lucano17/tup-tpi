@@ -15,7 +15,7 @@
 1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
 
-1763048639 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+1763115919 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -24,7 +24,7 @@
 
 1763041659 D
 
-1763048610 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+1763116353 e:\user\documentos\github\tup-tpi\tpi\funciones.h
 	<iostream>
 
 1763042030 n
@@ -57,11 +57,11 @@
 	<iostream>
 	"funciones.h"
 
-1762959887 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+1763115271 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
 	<iostream>
 	"funciones.h"
 
-1763048707 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1763116260 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 	<iostream>
 	"funciones.h"
 
@@ -137,7 +137,7 @@
 	<iostream>
 	"funciones.h"
 
-1763048589 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
+1763115467 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -148,7 +148,7 @@
 	<iostream>
 	"funciones.h"
 
-1763048565 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
+1763115630 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>

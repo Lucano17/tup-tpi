@@ -7,11 +7,10 @@
 using namespace std;
 
 /// CONSTANTES
-const int CANT_RONDAS = 10;
 
 
 /// MODALIDAD DOS JUGADORES
-int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
+int dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mejorPuntaje) {
 
     /// INGRESO DE NOMBRES DE LOS JUGADORES
     string jugador1, jugador2;
@@ -36,7 +35,7 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
         dibujarBordeXFino();
 
         /// TURNO JUGADOR 1
-        puntaje1 += turnoJugador(jugador1);
+        puntaje1 += turnoJugador(jugador1, CANT_DADOS);
 
         /// MOSTRAR RESULTADOS ENTRE TURNOS
         cout << "==== FIN DEL TURNO DE " << jugador1 << " ====\n";
@@ -48,7 +47,7 @@ int dosJugadores(string &mejorJugador, int &mejorPuntaje) {
 
         /// TURNO JUGADOR 2
         dibujarBordeXGrueso();
-        puntaje2 += turnoJugador(jugador2);
+        puntaje2 += turnoJugador(jugador2, CANT_DADOS);
         cin.ignore();
         cin.get();
 
