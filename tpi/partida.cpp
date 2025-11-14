@@ -90,7 +90,7 @@ int turnoJugador(string nombre) {
     char opcion;
     int puntosActuales = 0;
 
-    puntosActuales = tresLanzamientos(nombre, puntosActuales);
+    puntosActuales = tresLanzamientos(nombre, puntosActuales, dadosLanzados);
     return puntosActuales;
 }
 
@@ -130,18 +130,16 @@ int turnoJugadorSolitario(string nombre) {
     } else {
         lanzarDados(dadosLanzados, CANT_DADOS);
     }
-    puntosActuales = tresLanzamientos(nombre, puntosActuales);
+    puntosActuales = tresLanzamientos(nombre, puntosActuales, dadosLanzados);
     return puntosActuales;
 }
 
-int tresLanzamientos(string nombre, int puntosActuales){
-    int dadosLanzados[CANT_DADOS];
+int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[]){
     int lanzamientos = 1;
     char opcion;
 
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
-
-    lanzarDados(dadosLanzados, CANT_DADOS);
+    cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
     mostrarDados(dadosLanzados, CANT_DADOS);
     puntosActuales = calcularPuntos(dadosLanzados);
 
