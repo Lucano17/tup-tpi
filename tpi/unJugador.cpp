@@ -32,9 +32,6 @@ void unJugador(int CANT_DADOS, int CANT_RONDAS) {
         dibujarBordeXFino();
 
         cout << "Presione Enter para continuar...";
-
-        cin.ignore();
-        cin.get();
         ///
 
         /// PC
