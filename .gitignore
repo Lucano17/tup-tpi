@@ -46,3 +46,6 @@ Thumbs.db
 # tpi/*.layout
 tpi/tpi.cbp
 tpi/tpi.layout
+tpi/UnJugador.cpp
+/tpi/bin
+tpi/UnJugador.cpp
