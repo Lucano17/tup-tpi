@@ -4,7 +4,7 @@
 #include "funciones.h"
 using namespace std;
 
-void unJugador() {
+void unJugador(int CANT_DADOS, int CANT_RONDAS) {
     srand(time(0));
 
     string nombre;
@@ -16,7 +16,7 @@ void unJugador() {
     int puntajeTotalPC = 0;
 
     // Bucle de rondas
-    for (int ronda = 1; ronda <= 10; ronda++){
+    for (int ronda = 1; ronda <= CANT_RONDAS; ronda++){
         /// Jugador
         dibujarBordeXGrueso();
         cout << "           RONDA " << ronda << " DE 10" << endl;
@@ -24,7 +24,7 @@ void unJugador() {
         cout << "Puntaje total de " << nombre << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        puntosRondaJugador = turnoJugadorSolitario(nombre);
+        puntosRondaJugador = turnoJugadorSolitario(CANT_DADOS, nombre);
         puntajeTotalJugador += puntosRondaJugador;
 
         cout << "\n==== FIN DEL TURNO DE " << nombre << " ====\n";
@@ -46,12 +46,17 @@ void unJugador() {
 
         cout << "Turno de la PC" << endl;
 
-        puntosRondaPC = turnoPC();
+        puntosRondaPC = turnoPC(CANT_DADOS);
         puntajeTotalPC += puntosRondaPC;
 
         cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
         cout << "Puntaje total: " << puntajeTotalPC << endl;
         dibujarBordeXFino();
+
+        cout << "Presione Enter para continuar...";
+
+        cin.ignore();
+        cin.get();
         ///
     }
 

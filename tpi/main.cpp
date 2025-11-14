@@ -8,6 +8,8 @@ using namespace std;
 
 
 int main() {
+    int CANT_DADOS = 5;
+    int CANT_RONDAS = 10;
     srand(time(0));
 
     string mejorJugador = "";
@@ -32,11 +34,11 @@ int main() {
 
         switch (opcion) {
             case 1:
-                unJugador();
+                unJugador(CANT_DADOS, CANT_RONDAS);
                 break;
 
            case 2:
-                dosJugadores(mejorJugador, mejorPuntaje);
+                dosJugadores(CANT_DADOS, CANT_RONDAS, mejorJugador, mejorPuntaje);
                 break;
 
 
@@ -57,9 +59,7 @@ int main() {
                 break;
 
             default:
-
                 cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
-
         }
 
     } while (opcion != 0);
