@@ -6,5 +6,7 @@
 using namespace std;
 
 // Dos jugadores
-void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mejorPuntaje, int dadosLanzados[]);
+void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador2P,
+                  int &mejorPuntaje2P, int dadosLanzados[]);
+
 #endif

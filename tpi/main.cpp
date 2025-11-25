@@ -19,8 +19,13 @@ int main() {
 
     srand(time(0));
 
-    string mejorJugador = "";
-    int mejorPuntaje = 0;
+    string mejorJugador1P = "";
+    int mejorPuntaje1P = 0;
+
+    string mejorJugador2P = "";
+    int mejorPuntaje2P = 0;
+
+
     int opcion;
 
    do {
@@ -40,34 +45,42 @@ int main() {
         system("cls");
 
         switch (opcion) {
-            case 1:
-                unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados);
-                break;
+       case 1:
+        // Modo un jugador
+        unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados,
+                  mejorJugador1P, mejorPuntaje1P);
+        break;
 
-           case 2:
-                dosJugadores(CANT_DADOS, CANT_RONDAS, mejorJugador, mejorPuntaje, dadosLanzados);
-                break;
+    case 2:
+        // Modo dos jugadores
+        dosJugadores(CANT_DADOS, CANT_RONDAS,
+                     mejorJugador2P, mejorPuntaje2P,
+                     dadosLanzados);
+        break;
 
+    case 3:
+        // Mostrar los DOS puntajes
+        verPuntacionMax(mejorJugador1P, mejorPuntaje1P,
+                        mejorJugador2P, mejorPuntaje2P);
+        break;
 
-            case 3:
-                verPuntacionMax(mejorJugador, mejorPuntaje);
-                break;
+    case 4:
+        creditos();
+        break;
 
-            case 4:
-                creditos();
-                break;
+    case 5:
+        reglas();
+        break;
 
-            case 5:
-                reglas();
-                break;
+    case 0:
+        cout << "Saliendo del juego..." << endl;
+        break;
 
-            case 0:
-                cout << "Saliendo del juego..." << endl;
-                break;
+    default:
+        cout << "Opcion invalida. Intente nuevamente." << endl;
+        break;
+}
 
-            default:
-                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
-        }
 
     } while (opcion != 0);
 

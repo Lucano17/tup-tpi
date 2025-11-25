@@ -115,21 +115,32 @@ void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int 
     }
 }
 
-void verPuntacionMax(string mejorJugador, int mejorPuntaje){
-    cout << "==== PUNTUACION MAS ALTA ====" << endl;
-    if(mejorPuntaje > 0){
-        cout << "Jugador: " << mejorJugador << endl;
-        cout << "Puntaje: " << mejorPuntaje << endl;
-    } else {
-        cout << "Aun no hay puntuaciones registradas." << endl;
-    }
-    dibujarBordeXGrueso();
+void verPuntacionMax(string mj1, int mp1, string mj2, int mp2){
+    cout << "==== MEJORES PUNTUACIONES ====\n";
 
-    cout << "Presione ENTER para continuar..." << endl;
+    cout << "\n--- MODO 1 JUGADOR ---\n";
+    if(mp1 > 0){
+        cout << "Jugador: " << mj1 << endl;
+        cout << "Puntaje: " << mp1 << endl;
+    } else {
+        cout << "Aun no hay registros.\n";
+    }
+
+    cout << "\n--- MODO 2 JUGADORES ---\n";
+    if(mp2 > 0){
+        cout << "Jugador: " << mj2 << endl;
+        cout << "Puntaje: " << mp2 << endl;
+    } else {
+        cout << "Aun no hay registros.\n";
+    }
+
+    cout << "\nPresione ENTER para continuar...";
     cin.ignore();
     cin.get();
     system("cls");
 }
+
+
 
 
 bool verificarGenerala(int dadosLanzados[], int CANT_DADOS) {

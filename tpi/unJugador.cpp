@@ -7,7 +7,9 @@
 #include "utils.h"
 using namespace std;
 
-void unJugador(int CANT_DADOS, int CANT_RONDAS, int dadosLanzados[]) {
+void unJugador(int CANT_DADOS, int CANT_RONDAS, int dadosLanzados[],
+               string &mejorJugador1P, int &mejorPuntaje1P)
+{
     srand(time(0));
     //
     string nombre;
@@ -61,4 +63,10 @@ void unJugador(int CANT_DADOS, int CANT_RONDAS, int dadosLanzados[]) {
     cin.ignore();
     cin.get();
     system("cls");
+
+   if (puntajeTotalJugador > mejorPuntaje1P) {
+        mejorPuntaje1P = puntajeTotalJugador;
+        mejorJugador1P = nombre;
+    }
 }
+
