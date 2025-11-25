@@ -15,7 +15,9 @@
 1761754999 d:\backup\desktop\tup\carrera\materias\programación i\unidad 4\tpi\funciones.h
 	<iostream>
 
-1763115919 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+1763123339 ated upstream
+
+1764036846 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -24,7 +26,32 @@
 
 1763041659 D
 
-1763116353 e:\user\documentos\github\tup-tpi\tpi\funciones.h
+1763123013 shed changes
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"funciones.h"
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+	<iostream>
+	"partida.h"
+	"puntaje.h"
+	"utils.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	"funciones.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1764037038 e:\user\documentos\github\tup-tpi\tpi\funciones.h
 	<iostream>
 
 1763042030 n
@@ -45,9 +72,10 @@
 	<iostream>
 	"funciones.h"
 
-1762960023 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
+1764036846 source:e:\user\documentos\github\tup-tpi\tpi\reglas.cpp
 	<iostream>
-	"funciones.h"
+	"reglas.h"
+	"utils.h"
 
 1761828178 e:\user\documentos\github\tup-tpi\tpi\funciones.cpp
 	<iostream>
@@ -57,13 +85,13 @@
 	<iostream>
 	"funciones.h"
 
-1763115271 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+1764036846 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
 	<iostream>
+	<cstdlib>
+	<ctime>
 	"funciones.h"
 
-1763116260 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
-	<iostream>
-	"funciones.h"
+1763914726 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 
 1762787573 source:c:\users\feder\onedrive\escritorio\juego generala\tup-tpi\tpi\creditos.cpp
 	<iostream>
@@ -137,20 +165,152 @@
 	<iostream>
 	"funciones.h"
 
-1763115467 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
+1764036846 source:e:\user\documentos\github\tup-tpi\tpi\dosjugadores.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<string>
-	"funciones.h"
+	"dosjugadores.h"
+	"utils.h"
+	"partida.h"
+	"puntaje.h"
 
-1763048364 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
+1764036846 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"puntaje.h"
+	"utils.h"
+
+1764037271 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"unJugador.h"
+	"puntaje.h"
+	"partida.h"
+	"utils.h"
+
+1763118006 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\creditos.cpp
 	<iostream>
 	"funciones.h"
 
-1763115630 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
+1763119899 c:\users\feder\onedrive\escritorio\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1763118006 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\dosjugadores.cpp
+
+1763118006 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"funciones.h"
+
+1763123339 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"funciones.h"
+
+1763048364 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"funciones.h"
+
+1762960023 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"funciones.h"
+
+1763123013 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\unjugador.cpp
+
+1762959914 source:c:\users\feder\onedrive\escritorio\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1763915138 source:d:\backup\desktop\tup-tpi\tpi\creditos.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"funciones.h"
+
+1763823895 d:\backup\desktop\tup-tpi\tpi\funciones.h
+	<iostream>
+
+1763914272 source:d:\backup\desktop\tup-tpi\tpi\dosjugadores.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	"dosjugadores.h"
+	"utils.h"
+	"partida.h"
+	"puntaje.h"
+
+1763650035 source:d:\backup\desktop\tup-tpi\tpi\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"funciones.h"
+
+1763914726 source:d:\backup\desktop\tup-tpi\tpi\partida.cpp
+	<iostream>
+	"partida.h"
+	"puntaje.h"
+	"utils.h"
+
+1763914791 source:d:\backup\desktop\tup-tpi\tpi\puntaje.cpp
+	<iostream>
+	"puntaje.h"
+	"utils.h"
+
+1763915184 source:d:\backup\desktop\tup-tpi\tpi\reglas.cpp
+	<iostream>
+	"reglas.h"
+	"utils.h"
+
+1762959914 source:d:\backup\desktop\tup-tpi\tpi\utils.cpp
+	<iostream>
+	"funciones.h"
+
+1763910717 source:d:\backup\desktop\tup-tpi\tpi\unjugador.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"unJugador.h"
+	"puntaje.h"
+	"partida.h"
+	"utils.h"
+
+1763909358 d:\backup\desktop\tup-tpi\tpi\dosjugadores.h
+	<iostream>
+
+1763909309 d:\backup\desktop\tup-tpi\tpi\utils.h
+	<iostream>
+
+1763909266 d:\backup\desktop\tup-tpi\tpi\partida.h
+	<iostream>
+
+1763909881 d:\backup\desktop\tup-tpi\tpi\puntaje.h
+	<iostream>
+
+1763909769 d:\backup\desktop\tup-tpi\tpi\reglas.h
+	<iostream>
+
+1763909674 d:\backup\desktop\tup-tpi\tpi\unjugador.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\dosjugadores.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\utils.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\partida.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\puntaje.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\reglas.h
+	<iostream>
+
+1764036846 e:\user\documentos\github\tup-tpi\tpi\unjugador.h
+	<iostream>
 

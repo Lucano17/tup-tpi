@@ -2,15 +2,25 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
-#include "funciones.h"
+#include "dosjugadores.h"
+#include "utils.h"
+#include "partida.h"
+#include "puntaje.h"
 
 using namespace std;
 
-/// CONSTANTES
-
-
 /// MODALIDAD DOS JUGADORES
-int dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mejorPuntaje) {
+void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mejorPuntaje, int dadosLanzados[]) {
+
+
+    bool jugadasUsadas1[10] = {false, false, false, false, false,
+                                false, false, false, false, false};
+
+    bool jugadasUsadas2[10] = {false, false, false, false, false,
+                                false, false, false, false, false};
+
+    bool esGeneralaServida1 = false;
+    bool esGeneralaServida2 = false;
 
     /// INGRESO DE NOMBRES DE LOS JUGADORES
     string jugador1, jugador2;
@@ -35,7 +45,8 @@ int dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mej
         dibujarBordeXFino();
 
         /// TURNO JUGADOR 1
-        puntaje1 += turnoJugador(jugador1, CANT_DADOS);
+        int resultado = turnoJugador(jugador1, CANT_DADOS, jugadasUsadas1, esGeneralaServida1);
+        puntaje1 += resultado;
 
         /// MOSTRAR RESULTADOS ENTRE TURNOS
         cout << "==== FIN DEL TURNO DE " << jugador1 << " ====\n";
@@ -47,11 +58,37 @@ int dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mej
 
         /// TURNO JUGADOR 2
         dibujarBordeXGrueso();
-        puntaje2 += turnoJugador(jugador2, CANT_DADOS);
+        resultado = turnoJugador(jugador2, CANT_DADOS, jugadasUsadas2, esGeneralaServida2);
+        puntaje2 += resultado;
+
+
+        /// CORTA SI HAY GENERALA SERVIDA
+        if (esGeneralaServida1 == true && esGeneralaServida2 == true){
+            cout << "Es empate!!" << endl;
+            return;
+        }
+        else if (esGeneralaServida1 == true && esGeneralaServida2 == false){
+            cout << "El ganador es: " << jugador1 << endl;
+            cout << "Pulsa ENTER para continuar..." <<endl;
+            cin.ignore();
+            cin.get();
+            system("cls");
+            return;
+        }
+
+        else if (esGeneralaServida1 == false && esGeneralaServida2 == true){
+            cout << "El ganador es: " << jugador2 << endl;
+            cout << "Pulsa ENTER para continuar..." <<endl;
+            cin.ignore();
+            cin.get();
+            system("cls");
+            return;
+        }
+
         cin.ignore();
         cin.get();
 
-        ///  FIN DE RONDA -
+        ///  FIN DE RONDA
         cout << "===== FIN DE LA RONDA " << ronda << " =====" << endl;
         cout << "Puntajes totales hasta ahora:" << endl;
         cout << jugador1 << ": " << puntaje1 << " puntos" << endl;
@@ -69,31 +106,34 @@ int dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &mej
     cout << jugador2 << ": " << puntaje2 << " puntos" << endl;
 
     ///  MOSTRAR GANADOR O EMPATE
-   if (puntaje1 > puntaje2) {
-    cout << "El ganador es: " << jugador1 << endl;
+    if (puntaje1 > puntaje2) {
+        cout << "El ganador es: " << jugador1 << endl;
     }
     else if (puntaje2 > puntaje1) {
-    cout << "El ganador es: " << jugador2 << endl;
+        cout << "El ganador es: " << jugador2 << endl;
     }
     else {
-    cout << "\n=== EMPATE DE PUNTAJE ===" << endl;
+        cout << "=== EMPATE DE PUNTAJE ===" << endl;
+        cout << "Se decide ganador por LOTERIA..." << endl;
 
-    cout << "Se decide ganador por LOTERIA..." << endl;
+        /// LOTERIA SI HAY EMPATE
+        int ganadorSorteado = rand() % 2;
 
-
-    // loteria
-    int ganadorSorteado = rand() % 2;
-
-    if (ganadorSorteado == 0) {
-        cout << "Ganador por sorteo: " << jugador1 << endl;
-    } else {
-        cout << "Ganador por sorteo: " << jugador2 << endl;
+        if (ganadorSorteado == 0) {
+            cout << "Ganador por sorteo: " << jugador1 << endl;
+        } else {
+            cout << "Ganador por sorteo: " << jugador2 << endl;
+        }
     }
-}
 
+    /// GUARDA EL MEJOR PUNTAJE
     guardarMejorPuntaje(jugador1, puntaje1, mejorJugador, mejorPuntaje);
     guardarMejorPuntaje(jugador2, puntaje2, mejorJugador, mejorPuntaje);
 
+    cout << "Pulsa ENTER para continuar..." <<endl;
+    cin.ignore();
+    cin.get();
+    system("cls");
 
-    return 0;
+    return;
 }

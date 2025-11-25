@@ -10,6 +10,8 @@ using namespace std;
 int main() {
     int CANT_DADOS = 5;
     int CANT_RONDAS = 10;
+    int dadosLanzados[5];
+
     srand(time(0));
 
     string mejorJugador = "";
@@ -34,11 +36,11 @@ int main() {
 
         switch (opcion) {
             case 1:
-                unJugador(CANT_DADOS, CANT_RONDAS);
+                unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados);
                 break;
 
            case 2:
-                dosJugadores(CANT_DADOS, CANT_RONDAS, mejorJugador, mejorPuntaje);
+                dosJugadores(CANT_DADOS, CANT_RONDAS, mejorJugador, mejorPuntaje, dadosLanzados);
                 break;
 
 

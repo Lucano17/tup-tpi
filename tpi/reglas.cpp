@@ -1,5 +1,6 @@
 #include <iostream>
-#include "funciones.h"
+#include "reglas.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -75,5 +76,10 @@ void reglas(){
     cout << "Puntaje otorgado: "<< generalaPuntaje << " o si es en la primera tirada del turno, gana el partido" << endl;
     cout << "" << endl;
     dibujarBordeXGrueso();
+    //
+    cout << "Presione ENTER para continuar..." << endl;
+    cin.ignore();
+    cin.get();
+    system("cls");
 }
 ///

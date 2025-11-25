@@ -1,48 +1,30 @@
 #include <iostream>
-#include "funciones.h"
+#include "partida.h"
+#include "puntaje.h"
+#include "utils.h"
 
 using namespace std;
 
-/// Puntuacion Maxima
-void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int &mejorPuntaje){
-    if(puntaje > mejorPuntaje){
-        mejorPuntaje = puntaje;
-        mejorJugador = jugador;
-    }
-}
 
-void verPuntacionMax(string mejorJugador, int mejorPuntaje){
-    cout << "==== PUNTUACION MAS ALTA ====" << endl;
-    if(mejorPuntaje > 0){
-        cout << "Jugador: " << mejorJugador << endl;
-        cout << "Puntaje: " << mejorPuntaje << endl;
-    } else {
-        cout << "Aun no hay puntuaciones registradas." << endl;
-    }
-    dibujarBordeXGrueso();
-}
 
-/// FUNCION PARA LANZAR DADOS (ALEATORIA)
 void lanzarDados(int dadosLanzados[], int CANT_DADOS) {
     for (int i = 0; i < CANT_DADOS; i++) {
         dadosLanzados[i] = rand() % 6 + 1;
     }
 }
 
-/// FUNCION PARA LANZAR DADOS MANUAL
 void lanzarDadosManual(int dadosLanzados[], int CANT_DADOS) {
-    cout << "Modo Tirada Manual: ingrese el valor de cada dado (1-6)" << endl;
+    cout << "Modo Tirada Manual: Ingrese el valor de cada dado (1-6)" << endl;
     for (int i = 0; i < CANT_DADOS; i++) {
         int valor;
         do {
             cout << "Dado " << (i + 1) << ": ";
             cin >> valor;
-        } while (valor < 1 || valor > 6); // Validar que el valor este entre 1 y 6
+        } while (valor < 1 || valor > 6);
         dadosLanzados[i] = valor;
     }
 }
 
-/// FUNCION PARA MOSTRAR LOS DADOS EN PANTALLA
 void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << "Dados: ";
     for (int i = 0; i < CANT_DADOS; i++) {
@@ -51,15 +33,7 @@ void mostrarDados(int dadosLanzados[], int CANT_DADOS) {
     cout << endl;
 }
 
-/// FUNCION: verificar si es Generala servida
-bool esGenerala(int dados[], int CANT_DADOS) {
-    for (int i = 1; i < CANT_DADOS; i++) {
-        if (dados[i] != dados[0]) return false;
-    }
-    return true;
-}
 
-/// FUNCION PARA RELANZAR DADOS
 void relanzarDados(int dadosLanzados[]) {
     int cantidadReelanzar;
 
@@ -68,7 +42,7 @@ void relanzarDados(int dadosLanzados[]) {
     if (cantidadReelanzar == 0) return;
 
     cout << "Ingrese los numeros de los dados a relanzar (1-5, separados por espacio): ";
-    int indice; // declarar una sola vez
+    int indice;
     for (int i = 0; i < cantidadReelanzar; i++) {
         cin >> indice;
         if (indice >= 1 && indice <= 5) {
@@ -77,42 +51,22 @@ void relanzarDados(int dadosLanzados[]) {
     }
 }
 
-/// FUNCION QUE CONTROLA EL TURNO DE UN JUGADOR
-int turnoJugador(string nombre, int CANT_DADOS) {
+int turnoJugador(string nombre, int CANT_DADOS, bool jugadasUsadas[], bool &esGeneralaServida) {
     int dadosLanzados[CANT_DADOS];
     int puntosActuales = 0;
-
-    puntosActuales = tresLanzamientos(CANT_DADOS, nombre, puntosActuales);
-    return puntosActuales;
-}
-
-int turnoPC(int CANT_DADOS){
-    int dadosLanzados[CANT_DADOS];
-    int puntosActuales = 0;
-
-    // PRIMER LANZAMIENTO: llenar el arreglo de dados y mostrarlo
     lanzarDados(dadosLanzados, CANT_DADOS);
 
-    cout << "Turno de la PC Lanzamiento 1" << endl;
-    mostrarDados(dadosLanzados, CANT_DADOS);
-    puntosActuales = calcularPuntos(dadosLanzados);
+    puntosActuales = tresLanzamientos(nombre, puntosActuales, dadosLanzados, CANT_DADOS, jugadasUsadas);
 
-    if (esGenerala(dadosLanzados, CANT_DADOS)) {
-        cout << "\n======================================" << endl;
-        cout << "       GENERALA SERVIDA!" << endl;
-        cout << " La PC gano el juego!" << endl;
-        cout << "======================================\n" << endl;
-        return 999; // Valor especial para indicar que se terminï¿½ el juego
-        }
+    esGeneralaServida = verificarGenerala(dadosLanzados, CANT_DADOS);
 
     return puntosActuales;
 }
 
-int turnoJugadorSolitario(int CANT_DADOS, string nombre) {
-    int dadosLanzados[CANT_DADOS];
+int turnoJugadorSolitario(int CANT_DADOS, string nombre, bool jugadasUsadas[], int dadosLanzados[]) {
     int puntosActuales = 0;
+    bool esGeneralaServida = false;
 
-    // --- Preguntar si quiere tirada manual o automatica ---
     char modo;
     cout << "Desea modo de tirada manual o automatica? (m/a): ";
     cin >> modo;
@@ -122,30 +76,31 @@ int turnoJugadorSolitario(int CANT_DADOS, string nombre) {
     } else {
         lanzarDados(dadosLanzados, CANT_DADOS);
     }
-    puntosActuales = tresLanzamientos(CANT_DADOS, nombre, puntosActuales);
+
+    puntosActuales = tresLanzamientos(nombre, puntosActuales, dadosLanzados, CANT_DADOS, jugadasUsadas);
+
+    esGeneralaServida = verificarGenerala(dadosLanzados, CANT_DADOS);
+
+    if (esGeneralaServida == true) return puntosActuales;
+
     return puntosActuales;
 }
 
-int tresLanzamientos(int CANT_DADOS, string nombre, int puntosActuales){
+int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[], int CANT_DADOS, bool jugadasUsadas[]){
     int MAX_LANZAMIENTOS = 3;
-    int dadosLanzados[CANT_DADOS];
     int lanzamientos = 1;
     char opcion;
 
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
 
-    lanzarDados(dadosLanzados, CANT_DADOS);
     mostrarDados(dadosLanzados, CANT_DADOS);
-    puntosActuales = calcularPuntos(dadosLanzados);
 
-    if (esGenerala(dadosLanzados, CANT_DADOS)) {
-        cout << "\n======================================" << endl;
-        cout << "       GENERALA SERVIDA!" << endl;
-        cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
-        cout << "======================================\n" << endl;
-        return 999;
+    if (verificarGenerala(dadosLanzados, CANT_DADOS)) {
+    cout << "GENERALA SERVIDA! +50 PUNTOS" << endl;
+    cout << "­­­GANASTE EL JUEGO!!!" << endl;
+    return 50;
     }
-    // Hasta 3 lanzamientos
+
     while (lanzamientos < MAX_LANZAMIENTOS) {
         cout << "Deseas volver a lanzar algun dado? (s/n): ";
         cin >> opcion;
@@ -154,18 +109,23 @@ int tresLanzamientos(int CANT_DADOS, string nombre, int puntosActuales){
             lanzamientos++;
             cout << "Lanzamiento " << lanzamientos << " de " << nombre << endl;
             mostrarDados(dadosLanzados, CANT_DADOS);
-            puntosActuales = calcularPuntos(dadosLanzados);
 
-            if (esGenerala(dadosLanzados, CANT_DADOS)) {
-                cout << "\n======================================" << endl;
-                cout << "       GENERALA SERVIDA!" << endl;
-                cout << " Felicitaciones " << nombre << ", ganaste el juego!" << endl;
-                cout << "======================================\n" << endl;
-                return 999;
+            if (verificarGenerala(dadosLanzados, CANT_DADOS)) {
+                cout << "======================================" << endl;
+                cout << "       GENERALA!" << endl;
+                cout << " Felicitaciones " << nombre << ", hiciste generala (no servida)." << endl;
+                cout << "======================================" << endl;
+                return puntosActuales;
             }
         } else {
             break;
         }
     }
+    mostrarCategoriasDisponibles(jugadasUsadas);
+    int categoria = pedirCategoria(jugadasUsadas);
+    int puntos = calcularPuntajePorCategoria(categoria, dadosLanzados);
+
+    cout << "Puntos obtenidos: " << puntos << endl;
+    puntosActuales = puntos;
     return puntosActuales;
 }
