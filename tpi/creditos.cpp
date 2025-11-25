@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "funciones.h"
+#include "creditos.h"
+#include "utils.h"
 
 using namespace std;
 
