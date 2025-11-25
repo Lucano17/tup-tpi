@@ -35,13 +35,19 @@
 		<Unit filename="../.gitignore" />
 		<Unit filename="creditos.cpp" />
 		<Unit filename="dosJugadores.cpp" />
+		<Unit filename="dosJugadores.h" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="partida.cpp" />
+		<Unit filename="partida.h" />
 		<Unit filename="puntaje.cpp" />
+		<Unit filename="puntaje.h" />
 		<Unit filename="reglas.cpp" />
+		<Unit filename="reglas.h" />
 		<Unit filename="unJugador.cpp" />
+		<Unit filename="unJugador.h" />
 		<Unit filename="utils.cpp" />
+		<Unit filename="utils.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

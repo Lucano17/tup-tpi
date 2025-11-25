@@ -1,64 +1,64 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "funciones.h"
+#include "unJugador.h"
+#include "puntaje.h"
+#include "partida.h"
+#include "utils.h"
 using namespace std;
 
-void unJugador(int CANT_DADOS, int CANT_RONDAS) {
+void unJugador(int CANT_DADOS, int CANT_RONDAS, int dadosLanzados[]) {
     srand(time(0));
-
+    //
     string nombre;
-    cout << "Ingrese el nombre del jugador: ";
-    cin >> nombre;
     int puntosRondaJugador = 0;
     int puntajeTotalJugador = 0;
-    int puntosRondaPC = 0;
-    int puntajeTotalPC = 0;
+    int esGeneralaServida = false;
+    bool jugadasUsadas[10] = {false, false, false, false, false,
+                                false, false, false, false, false};
+    //
 
-    // Bucle de rondas
-    for (int ronda = 1; ronda <= 10; ronda++){
+    cout << "Ingrese el nombre del jugador: ";
+    cin >> nombre;
+
+    for (int ronda = 1; ronda <= CANT_RONDAS; ronda++){
         /// Jugador
         dibujarBordeXGrueso();
-        cout << "           RONDA " << ronda << " DE 10" << endl;
+        cout << "           RONDA " << ronda << " DE " << CANT_RONDAS << endl;
         dibujarBordeXGrueso();
         cout << "Puntaje total de " << nombre << ": " <<puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        puntosRondaJugador = turnoJugadorSolitario(CANT_DADOS, nombre);
+        puntosRondaJugador = turnoJugadorSolitario(CANT_DADOS, nombre, jugadasUsadas, dadosLanzados);
+
         puntajeTotalJugador += puntosRondaJugador;
+
+        esGeneralaServida = verificarGenerala(dadosLanzados, CANT_DADOS);
+
+        if (esGeneralaServida){
+            cout << "Puntaje total: " << puntajeTotalJugador << " puntos!" <<endl;
+            cout << "Presione ENTER para continuar..." <<endl;
+            cin.ignore();
+            cin.get();
+            system("cls");
+            return;
+        }
 
         cout << "\n==== FIN DEL TURNO DE " << nombre << " ====\n";
         cout << "Puntaje total: " << puntajeTotalJugador << endl;
         dibujarBordeXFino();
 
-        cout << "Presione Enter para continuar...";
-
+        cout << "Presione ENTER para continuar...";
         cin.ignore();
         cin.get();
-        ///
-
-        /// PC
-        dibujarBordeXGrueso();
-        cout << "           RONDA " << ronda << " DE 10" << endl;
-        dibujarBordeXGrueso();
-        cout << "Puntaje total de la PC: " <<puntajeTotalPC << endl;
-        dibujarBordeXFino();
-
-        cout << "Turno de la PC" << endl;
-
-        puntosRondaPC = turnoPC(CANT_DADOS);
-        puntajeTotalPC += puntosRondaPC;
-
-        cout << "\n==== FIN DEL TURNO DE LA PC ====\n" << endl;
-        cout << "Puntaje total: " << puntajeTotalPC << endl;
-        dibujarBordeXFino();
-        ///
     }
-
     dibujarBordeXGrueso();
     cout << "          FIN DEL JUEGO" << endl;
     dibujarBordeXGrueso();
     cout << nombre << ": " << puntajeTotalJugador << " puntos" << endl;
-    cout << "PC: " << puntajeTotalPC << " puntos" << endl;
     cout << "Gracias por jugar!" << endl;
+    cout << "Pulsa ENTER para continuar..." <<endl;
+    cin.ignore();
+    cin.get();
+    system("cls");
 }
