@@ -54,6 +54,7 @@ void relanzarDados(int dadosLanzados[]) {
 int turnoJugador(string nombre, int CANT_DADOS, bool jugadasUsadas[], bool &esGeneralaServida) {
     int dadosLanzados[CANT_DADOS];
     int puntosActuales = 0;
+
     lanzarDados(dadosLanzados, CANT_DADOS);
 
     puntosActuales = tresLanzamientos(nombre, puntosActuales, dadosLanzados, CANT_DADOS, jugadasUsadas);
@@ -92,7 +93,6 @@ int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[], int
     char opcion;
 
     cout << "Turno de " << nombre << " Lanzamiento 1" << endl;
-
     mostrarDados(dadosLanzados, CANT_DADOS);
 
     if (verificarGenerala(dadosLanzados, CANT_DADOS)) {

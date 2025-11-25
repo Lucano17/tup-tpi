@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     int CANT_DADOS = 5;
-    int CANT_RONDAS = 10;
+    int CANT_RONDAS = 2;
     int dadosLanzados[5];
 
     srand(time(0));
@@ -24,7 +24,7 @@ int main() {
         dibujarBordeXGrueso();
         cout << "1. Juego nuevo para un jugador " << endl;
         cout << "2. Juego nuevo para dos jugadores " << endl;
-        cout << "3. Ver la puntuaci¢n mas alta" << endl;
+        cout << "3. Ver la puntuacion mas alta" << endl;
         cout << "4. Ver creditos" << endl;
         cout << "5. Ver las reglas" << endl;
         cout << "0. Salir" << endl;
@@ -61,7 +61,7 @@ int main() {
                 break;
 
             default:
-                cout << "Opci¢n inv lida. Intente nuevamente." << endl << endl;
+                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
         }
 
     } while (opcion != 0);
