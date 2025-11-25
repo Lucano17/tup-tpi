@@ -97,7 +97,7 @@ int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[], int
 
     if (verificarGenerala(dadosLanzados, CANT_DADOS)) {
     cout << "GENERALA SERVIDA! +50 PUNTOS" << endl;
-    cout << "­­­GANASTE EL JUEGO!!!" << endl;
+    cout << "ï¿½ï¿½ï¿½GANASTE EL JUEGO!!!" << endl;
     return 50;
     }
 
