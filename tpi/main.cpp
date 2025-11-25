@@ -2,7 +2,12 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
-#include "funciones.h"
+#include "unJugador.h"
+#include "dosJugadores.h"
+#include "puntaje.h"
+#include "creditos.h"
+#include "reglas.h"
+#include "utils.h"
 
 using namespace std;
 
