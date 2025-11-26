@@ -47,6 +47,7 @@ void relanzarDados(int dadosLanzados[]) {
         cin >> indice;
         if (indice >= 1 && indice <= 5) {
             dadosLanzados[indice - 1] = rand() % 6 + 1;
+
         }
     }
 }
@@ -97,7 +98,7 @@ int tresLanzamientos(string nombre, int puntosActuales, int dadosLanzados[], int
 
     if (verificarGenerala(dadosLanzados, CANT_DADOS)) {
     cout << "GENERALA SERVIDA! +50 PUNTOS" << endl;
-    cout << "���GANASTE EL JUEGO!!!" << endl;
+    cout << "GANASTE EL JUEGO!!!" << endl;
     return 50;
     }
 

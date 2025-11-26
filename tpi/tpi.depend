@@ -17,7 +17,7 @@
 
 1763048364 D
 
-1764077210 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
+1764164456 source:e:\user\documentos\github\tup-tpi\tpi\main.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -76,15 +76,18 @@
 	<iostream>
 	"funciones.h"
 
-1764077136 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
+1764077371 source:e:\user\documentos\github\tup-tpi\tpi\utils.cpp
 	<iostream>
 	"utils.h"
 
-1763118006 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
+1764077371 source:e:\user\documentos\github\tup-tpi\tpi\creditos.cpp
 	<iostream>
-	"funciones.h"
+	<cstdlib>
+	<ctime>
+	"creditos.h"
+	"utils.h"
 
-1764039896 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
+1764162378 source:e:\user\documentos\github\tup-tpi\tpi\partida.cpp
 	<iostream>
 	"partida.h"
 	"puntaje.h"
@@ -172,12 +175,12 @@
 	"partida.h"
 	"puntaje.h"
 
-1764039662 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
+1764164451 source:e:\user\documentos\github\tup-tpi\tpi\puntaje.cpp
 	<iostream>
 	"puntaje.h"
 	"utils.h"
 
-1764039946 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
+1764165109 source:e:\user\documentos\github\tup-tpi\tpi\unjugador.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -302,7 +305,7 @@
 1763909674 d:\backup\desktop\tup-tpi\tpi\unjugador.h
 	<iostream>
 
-1764039662 e:\user\documentos\github\tup-tpi\tpi\dosjugadores.h
+1764161071 e:\user\documentos\github\tup-tpi\tpi\dosjugadores.h
 	<iostream>
 
 1764039662 e:\user\documentos\github\tup-tpi\tpi\utils.h
@@ -311,16 +314,16 @@
 1764039662 e:\user\documentos\github\tup-tpi\tpi\partida.h
 	<iostream>
 
-1764039662 e:\user\documentos\github\tup-tpi\tpi\puntaje.h
+1764163709 e:\user\documentos\github\tup-tpi\tpi\puntaje.h
 	<iostream>
 
 1764039662 e:\user\documentos\github\tup-tpi\tpi\reglas.h
 	<iostream>
 
-1764039662 e:\user\documentos\github\tup-tpi\tpi\unjugador.h
+1764161071 e:\user\documentos\github\tup-tpi\tpi\unjugador.h
 	<iostream>
 
-1764077119 e:\user\documentos\github\tup-tpi\tpi\creditos.h
+1764077371 e:\user\documentos\github\tup-tpi\tpi\creditos.h
 	<iostream>
 
 1764077371 source:c:\users\franc\onedrive\escritorio\tup-tpi\tpi\creditos.cpp

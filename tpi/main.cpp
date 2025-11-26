@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
     int CANT_DADOS = 5;
-    int CANT_RONDAS = 2;
+    int CANT_RONDAS = 10;
     int dadosLanzados[5];
 
     srand(time(0));
@@ -45,43 +45,38 @@ int main() {
         system("cls");
 
         switch (opcion) {
-       case 1:
-        // Modo un jugador
-        unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados,
-                  mejorJugador1P, mejorPuntaje1P);
-        break;
+            case 1:
+            unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados,
+                    mejorJugador1P, mejorPuntaje1P);
+                break;
 
-    case 2:
-        // Modo dos jugadores
-        dosJugadores(CANT_DADOS, CANT_RONDAS,
-                     mejorJugador2P, mejorPuntaje2P,
-                     dadosLanzados);
-        break;
+            case 2:
+                dosJugadores(CANT_DADOS, CANT_RONDAS,
+                            mejorJugador2P, mejorPuntaje2P,
+                            dadosLanzados);
+                break;
 
-    case 3:
-        // Mostrar los DOS puntajes
-        verPuntacionMax(mejorJugador1P, mejorPuntaje1P,
-                        mejorJugador2P, mejorPuntaje2P);
-        break;
+            case 3:
+                verPuntacionMax(mejorJugador1P, mejorPuntaje1P,
+                                mejorJugador2P, mejorPuntaje2P);
+                break;
 
-    case 4:
-        creditos();
-        break;
+            case 4:
+                creditos();
+                break;
 
-    case 5:
-        reglas();
-        break;
+            case 5:
+                reglas();
+                break;
 
-    case 0:
-        cout << "Saliendo del juego..." << endl;
-        break;
+            case 0:
+                cout << "Saliendo del juego..." << endl;
+                break;
 
-    default:
-        cout << "Opcion invalida. Intente nuevamente." << endl;
-        break;
-}
-
-
+            default:
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+                break;
+            }
     } while (opcion != 0);
 
     return 0;

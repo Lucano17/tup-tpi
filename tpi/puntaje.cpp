@@ -115,33 +115,37 @@ void guardarMejorPuntaje(string jugador, int puntaje, string &mejorJugador, int 
     }
 }
 
-void verPuntacionMax(string mj1, int mp1, string mj2, int mp2){
-    cout << "==== MEJORES PUNTUACIONES ====\n";
+void guardarMejorPuntaje1P(string jugador, int puntaje, string &mejorJugador1P, int &mejorPuntaje1P){
+    if(puntaje > mejorPuntaje1P){
+        mejorPuntaje1P = puntaje;
+        mejorJugador1P = jugador;
+    }
+}
 
-    cout << "\n--- MODO 1 JUGADOR ---\n";
+void verPuntacionMax(string mj1, int mp1, string mj2, int mp2){
+    cout << "==== MEJORES PUNTUACIONES ====" << endl;
+
+    cout << "--- MODO 1 JUGADOR ---" << endl;
     if(mp1 > 0){
         cout << "Jugador: " << mj1 << endl;
         cout << "Puntaje: " << mp1 << endl;
     } else {
-        cout << "Aun no hay registros.\n";
+        cout << "Aun no hay registros." << endl;
     }
 
-    cout << "\n--- MODO 2 JUGADORES ---\n";
+    cout << "--- MODO 2 JUGADORES ---" << endl;
     if(mp2 > 0){
         cout << "Jugador: " << mj2 << endl;
         cout << "Puntaje: " << mp2 << endl;
     } else {
-        cout << "Aun no hay registros.\n";
+        cout << "Aun no hay registros." << endl;
     }
 
-    cout << "\nPresione ENTER para continuar...";
+    cout << "Presione ENTER para continuar..." << endl;
     cin.ignore();
     cin.get();
     system("cls");
 }
-
-
-
 
 bool verificarGenerala(int dadosLanzados[], int CANT_DADOS) {
     for (int i = 1; i < CANT_DADOS; i++) {
