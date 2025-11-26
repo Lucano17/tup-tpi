@@ -14,13 +14,18 @@ using namespace std;
 
 int main() {
     int CANT_DADOS = 5;
-    int CANT_RONDAS = 2;
+    int CANT_RONDAS = 10;
     int dadosLanzados[5];
 
     srand(time(0));
 
-    string mejorJugador = "";
-    int mejorPuntaje = 0;
+    string mejorJugador1P = "";
+    int mejorPuntaje1P = 0;
+
+    string mejorJugador2P = "";
+    int mejorPuntaje2P = 0;
+
+
     int opcion;
 
    do {
@@ -41,16 +46,19 @@ int main() {
 
         switch (opcion) {
             case 1:
-                unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados);
+            unJugador(CANT_DADOS, CANT_RONDAS, dadosLanzados,
+                    mejorJugador1P, mejorPuntaje1P);
                 break;
 
-           case 2:
-                dosJugadores(CANT_DADOS, CANT_RONDAS, mejorJugador, mejorPuntaje, dadosLanzados);
+            case 2:
+                dosJugadores(CANT_DADOS, CANT_RONDAS,
+                            mejorJugador2P, mejorPuntaje2P,
+                            dadosLanzados);
                 break;
-
 
             case 3:
-                verPuntacionMax(mejorJugador, mejorPuntaje);
+                verPuntacionMax(mejorJugador1P, mejorPuntaje1P,
+                                mejorJugador2P, mejorPuntaje2P);
                 break;
 
             case 4:
@@ -66,9 +74,9 @@ int main() {
                 break;
 
             default:
-                cout << "Opcion invalida. Intente nuevamente." << endl << endl;
-        }
-
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+                break;
+            }
     } while (opcion != 0);
 
     return 0;
