@@ -34,9 +34,9 @@
 		</Compiler>
 		<Unit filename="../.gitignore" />
 		<Unit filename="creditos.cpp" />
+		<Unit filename="creditos.h" />
 		<Unit filename="dosJugadores.cpp" />
 		<Unit filename="dosJugadores.h" />
-		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="partida.cpp" />
 		<Unit filename="partida.h" />

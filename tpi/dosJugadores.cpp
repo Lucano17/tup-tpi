@@ -49,7 +49,7 @@ void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &me
         puntaje1 += resultado;
 
         /// MOSTRAR RESULTADOS ENTRE TURNOS
-        cout << "==== FIN DEL TURNO DE " << jugador1 << " ====\n";
+        cout << "==== FIN DEL TURNO DE " << jugador1 << " ====";
         cout << "Puntaje total: " << jugador1 << " = " << puntaje1
              << " - " << jugador2 << " = " << puntaje2 << endl;
         dibujarBordeXFino();
@@ -64,11 +64,23 @@ void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &me
 
         /// CORTA SI HAY GENERALA SERVIDA
         if (esGeneralaServida1 == true && esGeneralaServida2 == true){
+            guardarMejorPuntaje(jugador1, puntaje1, mejorJugador, mejorPuntaje);
+            guardarMejorPuntaje(jugador2, puntaje2, mejorJugador, mejorPuntaje);
+
             cout << "Es empate!!" << endl;
+            /// LOTERIA SI HAY EMPATE
+            int ganadorSorteado = rand() % 2;
+
+            if (ganadorSorteado == 0) {
+                cout << "Ganador por sorteo: " << jugador1 << endl;
+            } else {
+                cout << "Ganador por sorteo: " << jugador2 << endl;
+            }
             return;
         }
         else if (esGeneralaServida1 == true && esGeneralaServida2 == false){
             cout << "El ganador es: " << jugador1 << endl;
+            guardarMejorPuntaje(jugador1, puntaje1, mejorJugador, mejorPuntaje);
             cout << "Pulsa ENTER para continuar..." <<endl;
             cin.ignore();
             cin.get();
@@ -78,6 +90,7 @@ void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &me
 
         else if (esGeneralaServida1 == false && esGeneralaServida2 == true){
             cout << "El ganador es: " << jugador2 << endl;
+            guardarMejorPuntaje(jugador2, puntaje2, mejorJugador, mejorPuntaje);
             cout << "Pulsa ENTER para continuar..." <<endl;
             cin.ignore();
             cin.get();
@@ -99,7 +112,7 @@ void dosJugadores(int CANT_DADOS, int CANT_RONDAS, string &mejorJugador, int &me
     }
 
     ///  FIN DEL JUEGO
-    cout << "\n======================================" << endl;
+    cout << "======================================" << endl;
     cout << "          FIN DEL JUEGO" << endl;
     cout << "======================================" << endl;
     cout << jugador1 << ": " << puntaje1 << " puntos" << endl;
